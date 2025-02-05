@@ -1,0 +1,27 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@tw/api": ["libs/data-access/api/src/index.ts"],
+      "@tw/icons": ["libs/icons/src/index.ts"],
+      "@tw/templates-sakura": ["libs/templates/sakura/src/index.ts"],
+      "@tw/templates-sakura/server": ["libs/templates/sakura/src/server.ts"],
+      "@tw/ui/*": ["libs/ui/src/*"]
+    }
+  },
+  "include": ["libs/**/*", "apps/**/*"],
+  "exclude": ["node_modules", "tmp"]
+}

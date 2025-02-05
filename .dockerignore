@@ -1,0 +1,10 @@
+node_modules
+dist
+scripts
+README.md
+.github
+.husky
+.nx
+.vscode
+.yarn
+.npmrc

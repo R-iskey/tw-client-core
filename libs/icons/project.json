@@ -1,0 +1,15 @@
+{
+  "name": "icons",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/icons/src",
+  "projectType": "library",
+  "tags": ["type:ui"],
+  "targets": {
+    "svgr": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["svgr --typescript -d libs/icons/src/lib libs/icons/src/assets"]
+      }
+    }
+  }
+}
