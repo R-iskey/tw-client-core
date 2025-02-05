@@ -1,0 +1,48 @@
+.slider {
+  :global {
+    .slick-dots {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      bottom: -50px;
+      li {
+        width: 12px;
+        height: 12px;
+        button:before {
+          content: '';
+          width: 12px;
+          height: 12px;
+          border-radius: 4px;
+          background-color: #756a88;
+          opacity: 1;
+        }
+        &.slick-active {
+          width: 16px;
+          height: 16px;
+          button:before {
+            background-color: #ff066f;
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  :global{
+    .slick-dots{
+      bottom: -30px!important;
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  :global{
+    .slick-dots{
+      bottom: -25px!important;
+    }
+  }
+}
