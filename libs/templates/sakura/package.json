@@ -1,6 +1,6 @@
 {
   "name": "@tw/template-sakura",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "dependencies": {
     "react-countup": "^6.5.3",
     "react-slick": "^0.30.3",
