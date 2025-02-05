@@ -1,9 +1,6 @@
 {
   "name": "@tw/icons",
-  "version": "0.0.2",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
+  "version": "0.0.3",
   "type": "commonjs",
   "main": "index.js",
   "files": [

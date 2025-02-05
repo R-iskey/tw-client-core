@@ -1,11 +1,8 @@
 {
   "name": "@tw/api",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./index.js",
   "types": "./index.d.ts",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "exports": {
     ".": {
       "import": "./index.mjs",
