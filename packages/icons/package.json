@@ -1,0 +1,11 @@
+{
+  "name": "@tw/icons",
+  "version": "0.0.1",
+  "main": "index.js",
+  "files": [
+    "src/**/*"
+  ],
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

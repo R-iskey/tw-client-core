@@ -15,11 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@tw/api": ["libs/data-access/api/src/index.ts"],
-      "@tw/icons": ["libs/icons/src/index.ts"],
-      "@tw/templates-sakura": ["libs/templates/sakura/src/index.ts"],
-      "@tw/templates-sakura/server": ["libs/templates/sakura/src/server.ts"],
-      "@tw/ui/*": ["libs/ui/src/*"]
+      "@tw/api": ["packages/api/src/index.ts"],
+      "@tw/icons": ["packages/icons/src/index.ts"],
+      "@tw/template-sakura/*": ["packages/templates/sakura/src/app/*"],
+      "@tw/template-sakura/server": ["libs/templates/sakura/src/server.ts"],
+      "@tw/ui/*": ["packages/ui/src/*"]
     }
   },
   "include": ["libs/**/*", "apps/**/*"],
