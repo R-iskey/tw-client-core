@@ -1,4 +1,7 @@
-import React, { useState, ReactNode, ReactElement } from 'react';
+'use client'
+
+import type { ReactNode, ReactElement } from 'react';
+import React, { useState } from 'react';
 import { cn } from '../utils/cn';
 
 interface TabProps {

@@ -3,7 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/icons/src",
   "projectType": "library",
-  "tags": ["type:ui"],
+  "tags": ["tag:ui"],
   "targets": {
     "svgr": {
       "executor": "nx:run-commands",

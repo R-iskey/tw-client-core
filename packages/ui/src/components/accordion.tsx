@@ -1,8 +1,10 @@
+'use client'
+
 import * as React from 'react';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 
 import { cn } from '../utils/cn';
-import { Minus, Plus } from '@tw/icons';
+import { Minus, Plus } from '@triple-win/icons';
 
 const Accordion = AccordionPrimitive.Root;
 

@@ -1,0 +1,9 @@
+{
+  "default": {
+    "baseUrl": "http://localhost:3000",
+    "authTokenCookieName": "AccessToken",
+    "featureFlags": {
+      "enableCoolFeature": false
+    }
+  }
+}

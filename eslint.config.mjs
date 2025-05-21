@@ -5,7 +5,7 @@ export default [
   ...nx.configs['flat/typescript'],
   ...nx.configs['flat/javascript'],
   {
-    ignores: ['**/dist'],
+    ignores: ['**/dist', '**/vite.config.*.timestamp*', '**/vitest.config.*.timestamp*'],
   },
   {
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
@@ -20,20 +20,38 @@ export default [
               sourceTag: '*',
               onlyDependOnLibsWithTags: ['*'],
             },
+            {
+              sourceTag: 'tag:template',
+              onlyDependOnLibsWithTags: ['tag:ui', 'tag:utils'],
+            },
+            {
+              sourceTag: 'tag:ui',
+              onlyDependOnLibsWithTags: ['tag:ui', 'tag:utils'],
+            },
+            {
+              sourceTag: 'tag:utils',
+              onlyDependOnLibsWithTags: ['tag:utils'],
+            },
           ],
         },
       ],
     },
   },
   {
-    files: [
-      '**/*.ts',
-      '**/*.tsx',
-      '**/*.js',
-      '**/*.jsx',
-      '**/*.cjs',
-      '**/*.mjs',
-    ],
+    files: ['**/*.ts', '**/*.tsx'],
+    // Override or add rules here
+    rules: {
+      '@typescript-eslint/consistent-type-imports': [
+        'error',
+        {
+          prefer: 'type-imports',
+          fixStyle: 'separate-type-imports',
+        },
+      ],
+    },
+  },
+  {
+    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx', '**/*.cjs', '**/*.mjs'],
     // Override or add rules here
     rules: {},
   },

@@ -1,198 +1,131 @@
-@import 'tailwindcss';
+/* ‼️@NOTE: the source is telling the tailwing to run from the root of project to include the all classnames */
+@import 'tailwindcss' source('../../../../');
+@import "tw-animate-css";
 
-@layer base {
-  :root {
-    /* Page Background */
-    --background: #f6f6f6;
+@custom-variant dark (&:is(.dark *));
 
-    /* General font text */
-    --foreground: #000000;
-    --foreground-reversed: #ffffff;
-
-    /* Primary colors for <Button /> */
-    --primary: #ff066f;
-    --primary-foreground: #ffffff;
-    --primary-inactive: rgb(255, 6, 111, 0.5);
-    --primary-inactive-foreground: rgba(255, 255, 255, 0.5);
-    --primary-hover: color-mix(in hwb, var(--primary), #000000 20%);
-    --primary-hover-bright: color-mix(in hwb, var(--primary), #ffffff 20%);
-
-    /* Secondary colors for <Button /> */
-    --secondary: #ffffff;
-    --secondary-foreground: #2a0c60;
-    --secondary-inactive: rgba(255, 255, 255, 0.5);
-    --secondary-inactive-foreground: rgb(42, 12, 96, 0.5);
-    --secondary-hover: color-mix(in hwb, var(--secondary), #000000 20%);
-    --secondary-hover-bright: color-mix(in hwb, var(--secondary), #ffffff 20%);
-
-    --secondary-muted: rgba(0, 0, 0, 0.15);
-    --secondary-muted-hover: color-mix(in hwb, var(--secondary-muted), #000000 20%);
-    --secondary-muted-hover-bright: color-mix(in hwb, var(--secondary-muted), #ffffff 20%);
-
-    --passive-hover: color-mix(in hwb, #000000, #ffffff 20%);
-
-    /* Muted backgrounds such as <TabsList />, <Skeleton />, <Button variant='passive'> and <Switch /> */
-    --muted: rgba(0, 0, 0, 0.1);
-    --muted-foreground: rgba(0, 0, 0, 0.5);
-
-    --switch-background: rgba(28, 2, 76, 1);
-    --switch-hover: color-mix(in hwb, var(--switch-background), #000000 20%);
-    --switch-foreground: rgba(255, 255, 255, 0.5);
-
-    /* Used for destructive actions such as <Button variant="destructive"> */
-    --destructive: #ff5353;
-    --destructive-foreground: #000000;
-
-    /*Border color for inputs such as <Input />, <Select />, <Textarea />*/
-    --input: transparent;
-    --select-background: var(--input-background);
-    --select-foreground: var(--foreground);
-
-    /* Default border color */
-    --border: transparent;
-    --ring: transparent;
-
-    /* Used for accents such as hover effects on <DropdownMenuItem>, <SelectItem>...etc */
-    --accent: #ececec;
-    --accent-foreground: var(--foreground);
-
-    --radius: 0.5rem;
-
-    --card: #ffffff;
-    --card-foreground: #000000;
-
-    --popover: #ffffff;
-    --popover-foreground: #000000;
-
-    /* --- Custom variables */
-    --badge-yellow: #ffb800;
-    --badge-yellow-foreground: #2a0c60;
-    --badge-red: #ff3d00;
-    --badge-red-foreground: #2a0c60;
-
-    --input-background: rgba(0, 0, 0, 0.15);
-    --input-hover: color-mix(in hwb, var(--input-background), #000000 20%);
-
-    --menu-expended: #e3dce7;
-    --selected: #f0ecf2;
-    --bg-user-icon: rgba(123, 134, 191, 1);
-  }
-
-  .dark {
-    /* Page Background */
-    --background: #180049;
-
-    /* General font text */
-    --foreground: #ffffff;
-    --foreground-reversed: #000000;
-
-    /* Primary colors for <Button /> */
-    --primary: #ff066f;
-    --primary-foreground: #ffffff;
-    --primary-inactive: rgba(53, 30, 95, 1);
-    --primary-inactive-foreground: rgba(100, 67, 158, 1);
-    --primary-hover: color-mix(in hwb, var(--primary), #000000 20%);
-    --primary-hover-bright: color-mix(in hwb, var(--primary), #ffffff 20%);
-
-    /* Secondary colors for <Button /> */
-    --secondary: #ffffff;
-    --secondary-foreground: #290a5f;
-    --secondary-inactive: rgba(255, 255, 255, 0.5);
-    --secondary-inactive-foreground: rgb(42, 12, 96, 0.5);
-    --secondary-hover: color-mix(in hwb, var(--secondary), #000000 20%);
-    --secondary-hover-bright: color-mix(in hwb, var(--secondary), #ffffff 20%);
-
-    --secondary-muted: rgba(255, 255, 255, 0.15);
-    --secondary-muted-hover: color-mix(in hwb, var(--secondary-muted), #000000 20%);
-    --secondary-muted-hover-bright: color-mix(in hwb, var(--secondary-muted), #ffffff 20%);
-
-    --passive-hover: color-mix(in hwb, #ffffff, #000000 20%);
-
-    /* Muted backgrounds such as <TabsList />, <Skeleton />, <Button variant='passive'> and <Switch /> */
-    --muted: rgba(255, 255, 255, 0.15);
-    --muted-foreground: rgba(255, 255, 255, 0.5);
-
-    --switch-background: rgba(28, 2, 76, 1);
-    --switch-hover: color-mix(in hwb, var(--switch-background), #000000 20%);
-    --switch-foreground: rgba(255, 255, 255, 0.5);
-
-    /* Used for destructive actions such as <Button variant="destructive"> */
-    --destructive: #ff5353;
-    --destructive-foreground: #ffffff;
-
-    /* Badge Types for <Badges /> */
-    --badge-yellow: #ffb800;
-    --badge-yellow-foreground: #2a0c60;
-    --badge-red: #ff3d00;
-    --badge-red-foreground: 'MISSING';
-
-    /*Border color for inputs such as <Input />, <Select />, <Textarea />*/
-    --input: transparent;
-    --select-background: var(--input-background);
-    --select-foreground: var(--foreground);
-
-    /* Default border color */
-    --border: transparent;
-    --ring: transparent;
-
-    /* Used for accents such as hover effects on <DropdownMenuItem>, <SelectItem>...etc */
-    --accent: rgba(0, 0, 0, 0.15);
-    --accent-foreground: var(--foreground);
-
-    --radius: 0.5rem;
-
-    --card: rgba(255, 255, 255, 0.1);
-    --card-foreground: #ffffff;
-
-    --popover: #371379;
-    --popover-foreground: #ffffff;
-
-    /* --- Custom variables */
-    --badge-yellow: #ffb800;
-    --badge-yellow-foreground: #2a0c60;
-    --badge-red: #ff3d00;
-    --badge-red-foreground: #2a0c60;
-
-    --input-background: rgba(0, 0, 0, 0.5);
-    --input-hover: color-mix(in hwb, var(--input-background), #ffffff 20%);
-
-    --menu-expended: rgba(0, 0, 0, 0.7);
-    --selected: rgba(0, 0, 0, 0.5);
-    --gradient-default: #2e185a;
-    --gradient-foreground: #4f14c6;
-  }
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-inter);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.269 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.371 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border outline-ring/50;
   }
 
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: 'rlig' 1, 'calt' 1;
   }
 
   body,
   html {
     height: 100%;
-    font-family: 'Inter', sans-serif;
-  }
-
-  body.blur-effect {
-    position: relative;
-    overflow: hidden;
-  }
-
-  body.blur-effect:after {
-    content: '';
-    position: fixed;
-    background: rgba(0, 0, 0, 0.6);
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 31;
   }
 
   .scrollbar-hide::-webkit-scrollbar {

@@ -1,0 +1,275 @@
+/* @TODO: replace with @ */
+@import '../../../../ui/src/styles/global.css';
+
+:root {
+  --radius: 0.5rem;
+  --background: oklch(0.973 0 89.876);
+  --foreground: oklch(0 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.141 0.005 285.823);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.141 0.005 285.823);
+  --primary: oklch(0.642 0.255 7.902);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(1 0 0);
+  --secondary-foreground: oklch(0.268 0.133 290.454);
+  --muted: oklch(0.967 0.001 286.375);
+  --muted-foreground: oklch(0.552 0.016 285.938);
+  --accent: oklch(0.943 0 89.876);
+  --accent-foreground: oklch(0 0 0);
+  --destructive: oklch(0.68 0.208 24.582);
+  --border: oklch(0.92 0.004 286.32);
+  --input: transparent;
+  --ring: oklch(0.705 0.015 286.067);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.141 0.005 285.823);
+  --sidebar-primary: oklch(0.21 0.006 285.885);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.967 0.001 286.375);
+  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
+  --sidebar-border: oklch(0.92 0.004 286.32);
+  --sidebar-ring: oklch(0.705 0.015 286.067);
+
+  --badge-yellow: oklch(0.827 0.171 80.526);
+  --badge-yellow-foreground: oklch(0.268 0.133 290.454);
+  --badge-red: oklch(0.654 0.235 34.037);
+}
+
+.dark {
+  --background: oklch(0.208 0.118 286.633);
+  --foreground: oklch(1 0 0);
+  --card: oklch(0.21 0.006 285.885);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.21 0.006 285.885);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.642 0.255 7.902);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(1 0 0);
+  --secondary-foreground: oklch(0.264 0.134 290.342);
+  --muted: oklch(0.274 0.006 286.033);
+  --muted-foreground: oklch(0.705 0.015 286.067);
+  --accent: oklch(0 0 0 / 0.15);
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.68 0.208 24.582);
+  --border: oklch(1 0 0 / 10%);
+  --input: transparent;
+  --ring: oklch(0.264 0.134 290);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.21 0.006 285.885);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.274 0.006 286.033);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.552 0.016 285.938);
+
+  --badge-yellow: oklch(0.827 0.171 80.526);
+  --badge-yellow-foreground: oklch(0.268 0.133 290.454);
+  --badge-red: oklch(0.654 0.235 34.037);
+}
+
+/*@layer base {*/
+/*  :root {*/
+/*    !* Page Background *!*/
+/*    --background: #f6f6f6;*/
+
+/*    !* General font text *!*/
+/*    --foreground: #000000;*/
+/*    --foreground-reversed: #ffffff;*/
+
+/*    !* Primary colors for <Button /> *!*/
+/*    --primary: #ff066f;*/
+/*    --primary-foreground: #ffffff;*/
+/*    --primary-inactive: rgb(255, 6, 111, 0.5);*/
+/*    --primary-inactive-foreground: rgba(255, 255, 255, 0.5);*/
+/*    --primary-hover: color-mix(in hwb, var(--primary), #000000 20%);*/
+/*    --primary-hover-bright: color-mix(in hwb, var(--primary), #ffffff 20%);*/
+
+/*    !* Secondary colors for <Button /> *!*/
+/*    --secondary: #ffffff;*/
+/*    --secondary-foreground: #2a0c60;*/
+/*    --secondary-inactive: rgba(255, 255, 255, 0.5);*/
+/*    --secondary-inactive-foreground: rgb(42, 12, 96, 0.5);*/
+/*    --secondary-hover: color-mix(in hwb, var(--secondary), #000000 20%);*/
+/*    --secondary-hover-bright: color-mix(in hwb, var(--secondary), #ffffff 20%);*/
+
+/*    --secondary-muted: rgba(0, 0, 0, 0.15);*/
+/*    --secondary-muted-hover: color-mix(in hwb, var(--secondary-muted), #000000 20%);*/
+/*    --secondary-muted-hover-bright: color-mix(in hwb, var(--secondary-muted), #ffffff 20%);*/
+
+/*    --passive-hover: color-mix(in hwb, #000000, #ffffff 20%);*/
+
+/*    !* Muted backgrounds such as <TabsList />, <Skeleton />, <Button variant='passive'> and <Switch /> *!*/
+/*    --muted: rgba(0, 0, 0, 0.1);*/
+/*    --muted-foreground: rgba(0, 0, 0, 0.5);*/
+
+/*    --switch-background: rgba(28, 2, 76, 1);*/
+/*    --switch-hover: color-mix(in hwb, var(--switch-background), #000000 20%);*/
+/*    --switch-foreground: rgba(255, 255, 255, 0.5);*/
+
+/*    !* Used for destructive actions such as <Button variant="destructive"> *!*/
+/*    --destructive: #ff5353;*/
+/*    --destructive-foreground: #000000;*/
+
+/*    !*Border color for inputs such as <Input />, <Select />, <Textarea />*!*/
+/*    --input: transparent;*/
+/*    --select-background: var(--input-background);*/
+/*    --select-foreground: var(--foreground);*/
+
+/*    !* Default border color *!*/
+/*    --border: transparent;*/
+/*    --ring: transparent;*/
+
+/*    !* Used for accents such as hover effects on <DropdownMenuItem>, <SelectItem>...etc *!*/
+/*    --accent: #ececec;*/
+/*    --accent-foreground: var(--foreground);*/
+
+/*    --radius: 0.5rem;*/
+
+/*    --card: #ffffff;*/
+/*    --card-foreground: #000000;*/
+
+/*    --popover: #ffffff;*/
+/*    --popover-foreground: #000000;*/
+
+/*    !* --- Custom variables *!*/
+/*    --badge-yellow: #ffb800;*/
+/*    --badge-yellow-foreground: #2a0c60;*/
+/*    --badge-red: #ff3d00;*/
+/*    --badge-red-foreground: #2a0c60;*/
+
+/*    --input-background: rgba(0, 0, 0, 0.15);*/
+/*    --input-hover: color-mix(in hwb, var(--input-background), #000000 20%);*/
+
+/*    --menu-expended: #e3dce7;*/
+/*    --selected: #f0ecf2;*/
+/*    --bg-user-icon: rgba(123, 134, 191, 1);*/
+/*  }*/
+
+/*  .dark {*/
+/*    !* Page Background *!*/
+/*    --background: #190149;*/
+
+/*    !* General font text *!*/
+/*    --foreground: #ffffff;*/
+/*    --foreground-reversed: #000000;*/
+
+/*    !* Primary colors for <Button /> *!*/
+/*    --primary: #ff066f;*/
+/*    --primary-foreground: #ffffff;*/
+/*    --primary-inactive: rgba(53, 30, 95, 1);*/
+/*    --primary-inactive-foreground: rgba(100, 67, 158, 1);*/
+/*    --primary-hover: color-mix(in hwb, var(--primary), #000000 20%);*/
+/*    --primary-hover-bright: color-mix(in hwb, var(--primary), #ffffff 20%);*/
+
+/*    !* Secondary colors for <Button /> *!*/
+/*    --secondary: #ffffff;*/
+/*    --secondary-foreground: #290a5f;*/
+/*    --secondary-inactive: rgba(255, 255, 255, 0.5);*/
+/*    --secondary-inactive-foreground: rgb(42, 12, 96, 0.5);*/
+/*    --secondary-hover: color-mix(in hwb, var(--secondary), #000000 20%);*/
+/*    --secondary-hover-bright: color-mix(in hwb, var(--secondary), #ffffff 20%);*/
+
+/*    --secondary-muted: rgba(255, 255, 255, 0.15);*/
+/*    --secondary-muted-hover: color-mix(in hwb, var(--secondary-muted), #000000 20%);*/
+/*    --secondary-muted-hover-bright: color-mix(in hwb, var(--secondary-muted), #ffffff 20%);*/
+
+/*    --passive-hover: color-mix(in hwb, #ffffff, #000000 20%);*/
+
+/*    !* Muted backgrounds such as <TabsList />, <Skeleton />, <Button variant='passive'> and <Switch /> *!*/
+/*    --muted: rgba(255, 255, 255, 0.15);*/
+/*    --muted-foreground: rgba(255, 255, 255, 0.5);*/
+
+/*    --switch-background: rgba(28, 2, 76, 1);*/
+/*    --switch-hover: color-mix(in hwb, var(--switch-background), #000000 20%);*/
+/*    --switch-foreground: rgba(255, 255, 255, 0.5);*/
+
+/*    !* Used for destructive actions such as <Button variant="destructive"> *!*/
+/*    --destructive: #ff5353;*/
+/*    --destructive-foreground: #ffffff;*/
+
+/*    !* Badge Types for <Badges /> *!*/
+/*    --badge-yellow: #ffb800;*/
+/*    --badge-yellow-foreground: #2a0c60;*/
+/*    --badge-red: #ff3d00;*/
+/*    --badge-red-foreground: 'MISSING';*/
+
+/*    !*Border color for inputs such as <Input />, <Select />, <Textarea />*!*/
+/*    --input: transparent;*/
+/*    --select-background: var(--input-background);*/
+/*    --select-foreground: var(--foreground);*/
+
+/*    !* Default border color *!*/
+/*    --border: transparent;*/
+/*    --ring: transparent;*/
+
+/*    !* Used for accents such as hover effects on <DropdownMenuItem>, <SelectItem>...etc *!*/
+/*    --accent: rgba(0, 0, 0, 0.15);*/
+/*    --accent-foreground: var(--foreground);*/
+
+/*    --radius: 0.5rem;*/
+
+/*    --card: rgba(255, 255, 255, 0.1);*/
+/*    --card-foreground: #ffffff;*/
+
+/*    --popover: #371379;*/
+/*    --popover-foreground: #ffffff;*/
+
+/*    !* --- Custom variables *!*/
+/*    --badge-yellow: #ffb800;*/
+/*    --badge-yellow-foreground: #2a0c60;*/
+/*    --badge-red: #ff3d00;*/
+/*    --badge-red-foreground: #2a0c60;*/
+
+/*    --input-background: rgba(0, 0, 0, 0.5);*/
+/*    --input-hover: color-mix(in hwb, var(--input-background), #ffffff 20%);*/
+
+/*    --menu-expended: rgba(0, 0, 0, 0.7);*/
+/*    --selected: rgba(0, 0, 0, 0.5);*/
+/*    --gradient-default: #2e185a;*/
+/*    --gradient-foreground: #4f14c6;*/
+/*  }*/
+/*}*/
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /**,*/
+  /*::after,*/
+  /*::before,*/
+  /*::backdrop,*/
+  /*::file-selector-button {*/
+  /*  border-color: var(--gray2, currentColor);*/
+  /*}*/
+
+  body,
+  html {
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

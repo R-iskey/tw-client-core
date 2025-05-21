@@ -12,8 +12,8 @@ export * from './components/sonner';
 export * from './components/switch';
 export * from './components/table';
 export * from './components/tabs';
+export * from './components/link';
 
-export * from './config/postcss.config';
-export * from './config/tailwind.config';
+export * from './widgets/InputPassword';
 
 export * from './utils/cn';

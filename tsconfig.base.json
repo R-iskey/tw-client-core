@@ -1,5 +1,4 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
     "rootDir": ".",
     "sourceMap": true,
@@ -15,13 +14,16 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@tw/api": ["packages/api/src/index.ts"],
-      "@tw/icons": ["packages/icons/src/index.ts"],
-      "@tw/template-sakura/*": ["packages/templates/sakura/src/app/*"],
-      "@tw/template-sakura/server": ["libs/templates/sakura/src/server.ts"],
-      "@tw/ui/*": ["packages/ui/src/*"]
+      "@triple-win/api": ["packages/data-access/api/src/index.ts"],
+      "@triple-win/icons": ["packages/icons/src/index.ts"],
+      "@triple-win/template-sakura": ["packages/templates/sakura/src/index.ts"],
+      "@triple-win/template-sakura/*": ["packages/templates/sakura/src/*"],
+      "@triple-win/template-sakura/server": ["libs/templates/sakura/src/server.ts"],
+      "@triple-win/ui": ["packages/ui/src/index.ts"],
+      "@triple-win/ui/*": ["packages/ui/src/*"],
+      "@triple-win/query-client": ["packages/data-access/query-client/src/index.ts"]
     }
   },
-  "include": ["libs/**/*", "apps/**/*"],
+  "include": ["libs/**/*", "apps/**/*", "packages/**/*"],
   "exclude": ["node_modules", "tmp"]
 }

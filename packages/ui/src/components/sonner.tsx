@@ -1,14 +1,15 @@
+'use client'
+
 import { Toaster as Sonner } from 'sonner';
-// import { useThemeStore } from '@triple-win/store';
 
-type ToasterProps = React.ComponentProps<typeof Sonner>;
+type ToasterProps = React.ComponentProps<typeof Sonner> & {
+  theme?: 'dark' | 'light'
+};
 
-const Toaster = ({ ...props }: ToasterProps) => {
-  // const { currentTheme } = useThemeStore();
-
+const Toaster = ({ theme = 'light', ...props }: ToasterProps) => {
   return (
     <Sonner
-      // theme={currentTheme}
+      theme={theme}
       className="toaster group"
       toastOptions={{
         classNames: {

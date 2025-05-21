@@ -1,5 +1,6 @@
-import * as GeneratedIcons from '@tw/icons';
-import { cva, VariantProps } from 'class-variance-authority';
+import * as GeneratedIcons from '@triple-win/icons';
+import type { VariantProps } from 'class-variance-authority';
+import { cva } from 'class-variance-authority';
 import { type SVGProps } from 'react';
 import { cn } from '../utils/cn';
 

@@ -1,4 +1,11 @@
 {
-  "name": "@tw/template-sakura",
-  "version": "0.0.2"
+  "name": "@triple-win/template-sakura",
+  "version": "0.0.2",
+  "files": [
+    "**/*"
+  ],
+  "peerDependencies": {
+    "@triple-win/ui": "*",
+    "@triple-win/api": "*"
+  }
 }

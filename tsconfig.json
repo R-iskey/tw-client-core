@@ -1,4 +1,11 @@
 {
   "compilerOptions": {},
-  "extends": "./tsconfig.base.json"
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./apps/demo-sakura"
+    }
+  ]
 }
