@@ -45,6 +45,7 @@ export { default as Notes } from './Notes';
 export { default as PlayButton } from './PlayButton';
 export { default as PlusSquare } from './PlusSquare';
 export { default as Pointer } from './Pointer';
+export { default as Recent } from './Recent';
 export { default as RedCard } from './RedCard';
 export { default as Rocket } from './Rocket';
 export { default as RugbyBall } from './RugbyBall';

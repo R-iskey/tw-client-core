@@ -13,7 +13,7 @@ interface TopNavigationProps {
 
 export const ContentNavigation = ({ items }: TopNavigationProps) => {
   return (
-    <section role={'navigation'}>
+    <section role={'navigation'} className={'pb-6'}>
       <div className="flex bg-white dark:bg-white/15 p-[10px] rounded-full flex w-full h-[64px] shadow-lg overflow-x-auto scrollbar-hide justify-center gap-10">
         {items.map((item) => (
           <a

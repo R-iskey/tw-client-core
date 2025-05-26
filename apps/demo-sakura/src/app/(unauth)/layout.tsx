@@ -1,5 +1,6 @@
 import { type PropsWithChildren } from 'react';
-import { Logo, SakuraLayout, Sidebar, HeaderMenu, HeaderProfile, LanguageSelector } from '@triple-win/template-sakura';
+import { Logo, SakuraLayout, FooterSection, Sidebar, HeaderMenu, HeaderProfile, LanguageSelector } from '@triple-win/template-sakura';
+import { ContentNavigation } from '@triple-win/template-sakura/app/widgets/content-navigation/ContentNavigation';
 
 const { Header, Base, Main, Left, Content, Footer } = SakuraLayout;
 
@@ -21,9 +22,14 @@ export default async function Layout({ children }: PropsWithChildren) {
         <Left>
           {settings.leftSidebar && <Sidebar items={settings.leftSidebar} />}
         </Left>
-        <Content>{children}</Content>
+        <Content>
+          <ContentNavigation items={settings.pageNavigation} />
+          {children}
+        </Content>
       </Main>
-      <Footer />
+      <Footer>
+        <FooterSection />
+      </Footer>
     </Base>
   );
 }

@@ -1,6 +1,6 @@
-import type { GetCasinoGamesRequestParams, CasinoGame } from '@triple-win/api';
-import { CasinoApi } from '@triple-win/api';
-import { useInfiniteQuery, useMutation, useQuery } from '@tanstack/react-query';
+import type { CasinoGame, GetCasinoGamesRequestParams } from '@triple-win/api';
+import { useInfiniteQuery, useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { useMainApi } from '../providers/MainApiProvider';
 
 export const CASINO_GAMES_QK = 'casinoGamesKey';
 export const GAMES_PROVIDERS_QK = 'gamesProvidersKey';
@@ -8,12 +8,16 @@ export const GAMES_PROVIDERS_QK = 'gamesProvidersKey';
 type CasinoQueryParams = Omit<GetCasinoGamesRequestParams, 'count' | 'page'>;
 
 export const useCasinoQuery = (params?: CasinoQueryParams) => {
+  const queryClient = useQueryClient();
+
+  const { casinoApi } = useMainApi();
+
   const { providerFilter = [], filter = [] } = params || {};
 
   const casinoGamesQuery = useInfiniteQuery({
     queryKey: [CASINO_GAMES_QK],
     queryFn: ({ pageParam }) =>
-      CasinoApi.getCasinoGames({
+      casinoApi.getCasinoGames({
         page: pageParam,
         count: 13,
         filter,
@@ -37,12 +41,12 @@ export const useCasinoQuery = (params?: CasinoQueryParams) => {
 
   const providersQuery = useQuery({
     queryKey: [GAMES_PROVIDERS_QK],
-    queryFn: () => CasinoApi.getProviders(),
+    queryFn: () => casinoApi.getProviders(),
     select: ({ data }) => data.data,
   });
 
   const initCasinoGameMutation = useMutation({
-    mutationFn: CasinoApi.initCasinoGame,
+    mutationFn: casinoApi.initCasinoGame,
   });
 
   return {
