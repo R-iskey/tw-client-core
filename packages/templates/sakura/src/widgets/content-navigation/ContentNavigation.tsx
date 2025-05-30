@@ -6,7 +6,7 @@ import { Icon } from '@triple-win/ui';
 interface TopNavigationProps {
   items: Array<{
     path: string;
-    icon: string;
+    icon?: string;
     name: string;
   }>;
 }

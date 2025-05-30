@@ -15,16 +15,20 @@ export const metadata = {
   description: 'Sakura Theme Demo',
 };
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || ''; // Fallback for safety
-
 async function getAppConfig() {
-  const res = await fetch(`${baseUrl}/app-config.json`, {
+  // const res = await fetch(`${baseUrl}/app-config.json`, {
     // cache: 'no-store', // optional: always fresh
-  })
-  const allConfigs = await res.json()
-  // Use request headers to select correct config
-  const host = res.headers.get('host') || 'default';
-  return allConfigs[host];
+  // })
+  // const allConfigs = await res.json()
+  // const host = res.headers.get('host') || 'default';
+  // return allConfigs[host];
+  return {
+    "baseUrl": "http://localhost:3000",
+    "authTokenCookieName": "AccessToken",
+    "featureFlags": {
+      "enableCoolFeature": false
+    }
+  }
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {

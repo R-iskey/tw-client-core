@@ -4,13 +4,49 @@ import { ContentNavigation } from '@triple-win/template-sakura';
 
 const { Header, Base, Main, Left, Content, Footer } = SakuraLayout;
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || ''; // Fallback for safety
+const settings = {
+  mainNavigation: [
+    { name: 'Offers', path: '/offers' },
+    { name: 'Feedback', path: '/feedback' },
+    { name: 'About Us', path: '/about' },
+    { name: 'Contact Us', path: '/contact' },
+  ],
+  brand: {
+    name: 'Brand',
+    logo: {
+      dark: '/images/dark_logo.png',
+      light: '/images/light_logo.png'
+    }
+  },
+  pageNavigation: [
+    {name: 'Home', path: '/'},
+    {name: 'Games', path: '/games'},
+    {name: 'Casino', path: '/casino'},
+    {name: 'Live Casino', path: '/live'},
+    {name: 'Blog', path: '/blog'},
+    {name: 'Promotions', path: '/promotions'},
+  ],
+  leftSidebar: [
+    {name: 'Lobby', path: '/lobby', icon: 'Home'},
+    {name: 'For You', path: '/you', icon: 'Star'},
+    {name: 'Popular', path: '/popular', icon: 'Flame'},
+    {name: 'Classic', path: '/classic', icon: 'Rocket'},
+    {name: 'Slots', path: '/slots', icon: 'SlotMachine'},
+    {name: 'Unlimited Play', path: '/unlimited', icon: 'PlaystationSymbols'},
+  ],
+  locale: {
+    default: 'en',
+    available: [
+      {code: 'en', label: 'English', shortLabel: 'eng'},
+      {code: 'fr', label: 'French', shortLabel: 'fre'},
+    ]
+  }
+};
 
 
 export default async function Layout({ children }: PropsWithChildren) {
-  const response = await fetch(`${baseUrl}/api/settings`);
-  const settings = await response.json();
-
+  // const response = await fetch(`${baseUrl}/api/settings`);
+  // const settings = await response.json();
   return (
     <Base>
       <Header>
