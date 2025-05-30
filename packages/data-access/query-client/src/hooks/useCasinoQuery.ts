@@ -1,5 +1,5 @@
 import type { CasinoGame, GetCasinoGamesRequestParams } from '@triple-win/api';
-import { useInfiniteQuery, useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { useInfiniteQuery, useMutation, useQuery } from '@tanstack/react-query';
 import { useMainApi } from '../providers/MainApiProvider';
 
 export const CASINO_GAMES_QK = 'casinoGamesKey';
@@ -8,8 +8,6 @@ export const GAMES_PROVIDERS_QK = 'gamesProvidersKey';
 type CasinoQueryParams = Omit<GetCasinoGamesRequestParams, 'count' | 'page'>;
 
 export const useCasinoQuery = (params?: CasinoQueryParams) => {
-  const queryClient = useQueryClient();
-
   const { casinoApi } = useMainApi();
 
   const { providerFilter = [], filter = [] } = params || {};
@@ -26,7 +24,7 @@ export const useCasinoQuery = (params?: CasinoQueryParams) => {
     select: ({ pages }) => {
       const gamesList: CasinoGame[] = [];
       pages.forEach(({ data }) => {
-        data.data.forEach((game) => {
+        data.data.forEach((game: CasinoGame) => {
           gamesList.push(game);
         });
       });

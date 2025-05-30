@@ -1,6 +1,6 @@
 import { type PropsWithChildren } from 'react';
 import { Logo, SakuraLayout, FooterSection, Sidebar, HeaderMenu, HeaderProfile, LanguageSelector } from '@triple-win/template-sakura';
-import { ContentNavigation } from '@triple-win/template-sakura/app/widgets/content-navigation/ContentNavigation';
+import { ContentNavigation } from '@triple-win/template-sakura';
 
 const { Header, Base, Main, Left, Content, Footer } = SakuraLayout;
 
@@ -11,10 +11,10 @@ export default async function Layout({ children }: PropsWithChildren) {
   return (
     <Base>
       <Header>
-        <Logo image={settings.brand.logo} alt={settings.brand.name} />
+        <Logo image={settings.brand.logo.dark} alt={settings.brand.name} />
         <HeaderMenu navigations={settings.mainNavigation} />
         <div className={'flex space-x-4'}>
-          <HeaderProfile />
+          <HeaderProfile loginHref={'/auth/login'} signUpHref={'/auth/login'} />
           <LanguageSelector locale={settings.locale} />
         </div>
       </Header>

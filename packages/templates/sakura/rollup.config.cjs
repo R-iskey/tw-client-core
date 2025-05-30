@@ -1,8 +1,6 @@
 const { withNx } = require('@nx/rollup/with-nx');
 const url = require('@rollup/plugin-url');
 const svg = require('@svgr/rollup');
-const copy = require('rollup-plugin-copy');
-const peerDepsExternal =  require('rollup-plugin-peer-deps-external');
 
 module.exports = withNx(
   {
@@ -13,11 +11,11 @@ module.exports = withNx(
     external: ['react', 'react-dom', 'react/jsx-runtime'],
     format: ['esm'],
     assets: [{ input: '.', output: '.', glob: 'README.md' }],
+    skipTypeCheck: true
   },
   {
     // Provide additional rollup configuration here. See: https://rollupjs.org/configuration-options
     plugins: [
-      peerDepsExternal(),
       svg({
         svgo: false,
         titleProp: true,
@@ -25,11 +23,6 @@ module.exports = withNx(
       }),
       url({
         limit: 10000, // 10kB
-      }),
-      copy({
-        targets: [
-          { src: 'src/styles/global.css', dest: '../../../dist/packages/templates/sakura/styles' },
-        ],
       }),
     ],
   }

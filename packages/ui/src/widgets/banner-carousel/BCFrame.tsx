@@ -82,7 +82,7 @@ export const BCFrame = ({
 
       {!!content && (
         <div
-          className={`absolute flex gap-7 flex-col bottom-5 justify-center items-center w-full`}
+          className={`z-[11] absolute flex gap-7 flex-col bottom-5 justify-center items-center w-full`}
         >
           <h2 className="">{content.description}</h2>
           {!!content.ctaUrl && (

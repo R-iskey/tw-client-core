@@ -1,4 +1,4 @@
-/* ‼️@NOTE: the source is telling the tailwing to run from the root of project to include the all classnames */
+/* ‼️@NOTE: the source is telling the tailwind to run from the root of project to include the all classnames */
 @import 'tailwindcss' source('../../../../');
 @import "tw-animate-css";
 

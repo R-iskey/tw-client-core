@@ -25,10 +25,6 @@
       }
     ]
   },
-  "references": [
-    { "path": "../../packages/ui" },
-    { "path": "../../packages/templates/sakura" }
-  ],
   "include": [
     "**/*.js",
     "**/*.jsx",

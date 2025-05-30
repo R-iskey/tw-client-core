@@ -1,4 +1,17 @@
 {
-  "name": "@triplewin/query-client",
-  "version": "0.0.1"
+  "name": "@triple-win/query-client",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "files": [
+    "**/*"
+  ],
+  "dependencies": {
+    "@triple-win/api": "workspace:^",
+    "@tanstack/react-query": "^5.76.1",
+    "cookies-next": "^5.1.0"
+  },
+  "peerDependencies": {
+    "react": "^19",
+    "react-dom": "^19"
+  }
 }

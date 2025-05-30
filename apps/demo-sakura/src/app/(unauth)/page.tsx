@@ -72,10 +72,10 @@ const slides = [
 ];
 
 const jackpotList = [
-  { id: faker.string.uuid(), icon: 'Spade', amount: random6Digits(), currency },
-  { id: faker.string.uuid(), icon: 'Heart', amount: random6Digits(), currency },
-  { id: faker.string.uuid(), icon: 'Diamond', amount: random6Digits(), currency },
-  { id: faker.string.uuid(), icon: 'Club', amount: random6Digits(), currency },
+  { id: faker.string.uuid(), icon: '/images/cart-spades.png', amount: random6Digits(), currency },
+  { id: faker.string.uuid(), icon: '/images/cart-heart.png', amount: random6Digits(), currency },
+  { id: faker.string.uuid(), icon: '/images/cart-diamonds.png', amount: random6Digits(), currency },
+  { id: faker.string.uuid(), icon: '/images/cart-clubs.png', amount: random6Digits(), currency },
 ];
 
 const winners = {
@@ -143,100 +143,100 @@ const trendingItems = [
 
 const providerItems = [
   {
-    id: '1',
+    id: faker.string.uuid(),
     name: 'NetEnt',
     icon: '/images/provider-1.png',
-    count: 20, // Example count
+    count: faker.number.int({max: 40}),
   },
   {
-    id: '2',
+    id: faker.string.uuid(),
     name: 'Habanero',
     icon: '/images/provider-2.png',
-    count: 20, // Example count
+    count: faker.number.int({max: 40}),
   },
   {
-    id: '3',
+    id: faker.string.uuid(),
     name: 'Relax',
     icon: '/images/provider-3.png',
-    count: 100,
+    count: faker.number.int({max: 40}),
   },
   {
-    id: '4',
+    id: faker.string.uuid(),
     name: 'Booming Games',
     icon: '/images/provider-4.png',
-    count: 5,
+    count: faker.number.int({max: 40}),
   },
   {
-    id: '5',
+    id: faker.string.uuid(),
     name: 'EvoPlay',
     icon: '/images/provider-5.png',
-    count: 30,
+    count: faker.number.int({max: 40}),
   },
   {
-    id: '6',
+    id: faker.string.uuid(),
     name: 'RubyPlay',
     icon: '/images/provider-6.png',
-    count: 50,
+    count: faker.number.int({max: 40}),
   },
   {
-    id: '7',
+    id: faker.string.uuid(),
     name: 'SlotMill',
     icon: '/images/provider-7.png',
-    count: 40,
+    count: faker.number.int({max: 40}),
   },
   {
-    id: '8',
+    id: faker.string.uuid(),
     name: 'Playson',
     icon: '/images/provider-8.png',
-    count: 300,
+    count: faker.number.int({max: 40}),
   },
   {
-    id: '9',
+    id: faker.string.uuid(),
     name: 'Playson',
     icon: '/images/provider-8.png',
-    count: 40,
+    count: faker.number.int({max: 40}),
   },
   {
-    id: '10',
+    id: faker.string.uuid(),
     name: 'Relax',
     icon: '/images/provider-3.png',
-    count: 40,
+    count: faker.number.int({max: 40}),
   },
   {
-    id: '11',
+    id: faker.string.uuid(),
     name: 'NetEnt',
     icon: '/images/provider-1.png',
-    count: 40,
+    count: faker.number.int({max: 40}),
   },
   {
-    id: '12',
+    id: faker.string.uuid(),
     name: 'Habanero',
     icon: '/images/provider-2.png',
-    count: 40,
+    count: faker.number.int({max: 40}),
   },
   {
-    id: '13',
+    id: faker.string.uuid(),
     name: 'Booming Games',
     icon: '/images/provider-4.png',
-    count: 40,
+    count: faker.number.int({max: 40}),
   },
   {
-    id: '14',
+    id: faker.string.uuid(),
     name: 'EvoPlay',
     icon: '/images/provider-5.png',
-    count: 40,
+    count: faker.number.int({max: 40}),
   },
   {
-    id: '15',
+    id: faker.string.uuid(),
     name: 'RubyPlay',
     icon: '/images/provider-6.png',
-    count: 40,
+    count: faker.number.int({max: 40}),
   },
   {
-    id: '16',
+    id: faker.string.uuid(),
     name: 'SlotMill',
     icon: '/images/provider-7.png',
-    count: 40,
+    count: faker.number.int({max: 40}),
   },
 ];
 
@@ -247,7 +247,7 @@ const gamesInfo = [
       name: faker.commerce.productName(),
       url: faker.internet.url(),
       provider: 'EvoPlay',
-      imageUrl: `./images/Banner-${faker.helpers.rangeToNumber({ min: 1, max: 5 })}.png`,
+      imageUrl: `/images/Banner-${faker.helpers.rangeToNumber({ min: 1, max: 5 })}.png`,
     })),
   },
   {
@@ -256,7 +256,7 @@ const gamesInfo = [
       name: faker.commerce.productName(),
       url: faker.internet.url(),
       provider: 'EvoPlay',
-      imageUrl: `./images/Banner-${faker.helpers.rangeToNumber({ min: 1, max: 5 })}.png`,
+      imageUrl: `/images/Banner-${faker.helpers.rangeToNumber({ min: 1, max: 5 })}.png`,
     })),
   },
   {
@@ -265,7 +265,7 @@ const gamesInfo = [
       name: faker.commerce.productName(),
       url: faker.internet.url(),
       provider: 'EvoPlay',
-      imageUrl: `./images/Banner-${faker.helpers.rangeToNumber({ min: 1, max: 5 })}.png`,
+      imageUrl: `/images/Banner-${faker.helpers.rangeToNumber({ min: 1, max: 5 })}.png`,
     })),
   },
 ];

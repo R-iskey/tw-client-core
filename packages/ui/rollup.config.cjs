@@ -1,8 +1,6 @@
 const { withNx } = require('@nx/rollup/with-nx');
 const url = require('@rollup/plugin-url');
 const svg = require('@svgr/rollup');
-const peerDepsExternal =  require('rollup-plugin-peer-deps-external');
-const copy = require('rollup-plugin-copy');
 
 module.exports = withNx(
   {
@@ -17,7 +15,6 @@ module.exports = withNx(
   {
     // Provide additional rollup configuration here. See: https://rollupjs.org/configuration-options
     plugins: [
-      peerDepsExternal(),
       svg({
         svgo: false,
         titleProp: true,
@@ -25,12 +22,7 @@ module.exports = withNx(
       }),
       url({
         limit: 10000, // 10kB
-      }),
-      copy({
-        targets: [
-          { src: 'src/configs/tailwind.preset.js', dest: '../../dist/packages/ui/src/configs' },
-        ],
-      }),
+      })
     ],
   }
 );

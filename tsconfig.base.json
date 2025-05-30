@@ -16,12 +16,10 @@
     "paths": {
       "@triple-win/api": ["packages/data-access/api/src/index.ts"],
       "@triple-win/icons": ["packages/icons/src/index.ts"],
+      "@triple-win/query-client": ["packages/data-access/query-client/src/index.ts"],
       "@triple-win/template-sakura": ["packages/templates/sakura/src/index.ts"],
-      "@triple-win/template-sakura/*": ["packages/templates/sakura/src/*"],
-      "@triple-win/template-sakura/server": ["libs/templates/sakura/src/server.ts"],
-      "@triple-win/ui": ["packages/ui/src/index.ts"],
-      "@triple-win/ui/*": ["packages/ui/src/*"],
-      "@triple-win/query-client": ["packages/data-access/query-client/src/index.ts"]
+      "@triple-win/template-sakura/styles/*": ["packages/templates/sakura/src/styles/*"],
+      "@triple-win/ui": ["packages/ui/src/index.ts"]
     }
   },
   "include": ["libs/**/*", "apps/**/*", "packages/**/*"],

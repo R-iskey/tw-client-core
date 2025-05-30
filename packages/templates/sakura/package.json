@@ -1,11 +1,23 @@
 {
   "name": "@triple-win/template-sakura",
-  "version": "0.0.2",
+  "version": "0.0.1",
+  "main": "dist/index.js",
   "files": [
     "**/*"
   ],
+  "dependencies": {
+    "@triple-win/ui": "workspace:^",
+    "@triple-win/api": "workspace:^",
+    "@triple-win/query-client": "workspace:^",
+    "@triple-win/icons": "workspace:^",
+    "@hookform/resolvers": "^5.0.1",
+    "react-hook-form": "^7.56.4",
+    "zod": "^3.25.17",
+    "framer-motion": "^12.12.2"
+  },
   "peerDependencies": {
-    "@triple-win/ui": "*",
-    "@triple-win/api": "*"
+    "react": "^19",
+    "react-dom": "^19",
+    "next": "^15"
   }
 }

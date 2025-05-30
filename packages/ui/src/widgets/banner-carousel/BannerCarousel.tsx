@@ -10,7 +10,8 @@ import { useSwipeable } from 'react-swipeable';
 import { useHasFocus } from '../../hooks/useHasFocus';
 import { useIsVisible } from '../../hooks/useIsVisible';
 import { cn } from '../../utils/cn';
-import { BCControl } from '@triple-win/ui/widgets/banner-carousel/BCControl';
+import { BCControl } from './BCControl';
+import { BCFrameShade } from './BCFrameShade';
 
 const DEFAULT_ASPECT_RATIO = [16, 9];
 const DEFAULT_DURATION = 6000;
@@ -180,7 +181,7 @@ export const BannerCarousel = ({
               height: heights?.mobile,
             }}
           >
-            {/*<div className={cn('absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent rounded-3xl z-[100]')}></div>*/}
+            <BCFrameShade />
             <BCFrame
               priority={i === 0}
               content={frame.mobile?.content}
@@ -212,7 +213,7 @@ export const BannerCarousel = ({
               aria-hidden={i !== index}
               inert={i !== index}
             >
-              {/*<div className={'absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent'}></div>*/}
+              <BCFrameShade />
               <BCFrame
                 priority={i === 0}
                 content={frame.desktop?.content}
