@@ -4,8 +4,11 @@ import { ContentNavigation } from '@triple-win/template-sakura';
 
 const { Header, Base, Main, Left, Content, Footer } = SakuraLayout;
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || ''; // Fallback for safety
+
+
 export default async function Layout({ children }: PropsWithChildren) {
-  const response = await fetch('http://localhost:3000/api/settings');
+  const response = await fetch(`${baseUrl}/api/settings`);
   const settings = await response.json();
 
   return (

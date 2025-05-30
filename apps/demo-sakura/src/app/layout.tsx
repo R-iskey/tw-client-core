@@ -15,8 +15,10 @@ export const metadata = {
   description: 'Sakura Theme Demo',
 };
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || ''; // Fallback for safety
+
 async function getAppConfig() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/app-config.json`, {
+  const res = await fetch(`${baseUrl}/app-config.json`, {
     // cache: 'no-store', // optional: always fresh
   })
   const allConfigs = await res.json()
