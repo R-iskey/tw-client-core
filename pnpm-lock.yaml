@@ -198,12 +198,6 @@ importers:
 
   apps/demo-sakura:
     dependencies:
-      '@triple-win/query-client':
-        specifier: workspace:^
-        version: link:../../packages/data-access/query-client
-      '@triple-win/template-sakura':
-        specifier: workspace:^
-        version: link:../../packages/templates/sakura
       next:
         specifier: ~15.2.4
         version: 15.2.5(@babel/core@7.27.3)(babel-plugin-macros@3.1.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(sass@1.89.0)
@@ -220,6 +214,12 @@ importers:
       '@faker-js/faker':
         specifier: ^9.8.0
         version: 9.8.0
+      '@triple-win/query-client':
+        specifier: workspace:^
+        version: link:../../packages/data-access/query-client
+      '@triple-win/template-sakura':
+        specifier: workspace:^
+        version: link:../../packages/templates/sakura
 
   packages/data-access/api:
     dependencies:
