@@ -2,7 +2,6 @@
   "compilerOptions": {
     "rootDir": ".",
     "sourceMap": true,
-    "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -13,6 +12,8 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "composite": false,
+    "declaration": false,
     "paths": {
       "@triple-win/api": ["packages/data-access/api/src/index.ts"],
       "@triple-win/icons": ["packages/icons/src/index.ts"],

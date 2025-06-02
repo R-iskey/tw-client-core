@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/triple-slash-reference
-/// <reference path="./axios.d.ts" />
+/// <reference path="./types/axios.d.ts" />
 
 export * from './auth/auth.api';
 export * from './auth/auth.types';

@@ -1,9 +1,8 @@
 {
   "name": "@triple-win/icons",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "1.0.1",
   "files": [
-    "src/**/*"
+    "**/*"
   ],
   "dependencies": {
     "tslib": "^2.3.0"

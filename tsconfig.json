@@ -6,9 +6,6 @@
   "references": [
     {
       "path": "./apps/demo-sakura"
-    },
-    {
-      "path": "./packages/ui"
     }
   ]
 }

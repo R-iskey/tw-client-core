@@ -90,5 +90,12 @@
     "version": {
       "preVersionCommand": "pnpm dlx nx run-many -t build"
     }
+  },
+  "targetDefaults": {
+    "@nx/js:tsc": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    }
   }
 }
