@@ -10,7 +10,7 @@ export function FooterSection() {
         <div className={'flex space-x-24'}>
           <div>
             <h3 className="font-semibold text-xl">About us</h3>
-            <hr className={'my-2 bg-muted-foreground'} />
+            <hr className={'mb-3 mt-1 bg-muted-foreground'} />
             <ul className="space-y-2">
               <li>
                 <a href="#" className="hover:underline text-muted-foreground">
@@ -38,7 +38,7 @@ export function FooterSection() {
           {/* Middle Section */}
           <div>
             <h3 className="font-semibold text-xl">Games</h3>
-            <hr className={'my-2 bg-muted-foreground'} />
+            <hr className={'mb-3 mt-1 bg-muted-foreground'} />
             <div className="flex mt-2 space-x-10">
               <div>
                 <ul className="space-y-1">

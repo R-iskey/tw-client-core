@@ -14,7 +14,7 @@ export const ProvidersList = ({ items }: ProvidersListProps) => {
   const [selectedProviders, setSelectedProviders] = useState<string[]>(['all']);
   const [showAll, setShowAll] = useState(false);
 
-  const visibleProviders = showAll ? items : items.slice(0, 12);
+  const visibleProviders = showAll ? items : items.slice(0, 16);
 
   const handleSelectProvider = (providerId: string) => {
     if (providerId === 'all') {
@@ -36,7 +36,7 @@ export const ProvidersList = ({ items }: ProvidersListProps) => {
 
   return (
     <div>
-      <div className={cn('grid grid-cols-2 lg:grid-cols-6 2xl:grid-cols-7 gap-2.5')}>
+      <div className={cn('grid grid-cols-2 lg:grid-cols-9 2xl:grid-cols-9 gap-2.5')}>
         <ProviderItem
           onProviderSelect={handleSelectProvider}
           item={{

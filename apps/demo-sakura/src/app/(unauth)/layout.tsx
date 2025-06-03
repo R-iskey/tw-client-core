@@ -19,12 +19,12 @@ const settings = {
     }
   },
   pageNavigation: [
-    {name: 'Home', path: '/'},
-    {name: 'Games', path: '/games'},
-    {name: 'Casino', path: '/casino'},
-    {name: 'Live Casino', path: '/live'},
-    {name: 'Blog', path: '/blog'},
-    {name: 'Promotions', path: '/promotions'},
+    {name: 'Home', icon: 'Home', path: '/'},
+    {name: 'Games', icon: 'Gamepad', path: '/games'},
+    {name: 'Casino', icon: 'SlotMachine', path: '/casino'},
+    {name: 'Live Casino', icon: 'ConnectionSignal', path: '/live'},
+    {name: 'Blog', icon: 'Layout', path: '/blog'},
+    {name: 'Promotions', icon: 'Rocket', path: '/promotions'},
   ],
   leftSidebar: [
     {name: 'Lobby', path: '/lobby', icon: 'Home'},
@@ -33,6 +33,10 @@ const settings = {
     {name: 'Classic', path: '/classic', icon: 'Rocket'},
     {name: 'Slots', path: '/slots', icon: 'SlotMachine'},
     {name: 'Unlimited Play', path: '/unlimited', icon: 'PlaystationSymbols'},
+  ],
+  leftSidebar2: [
+    {name: 'Install App', path: '/install-app', icon: 'PlusSquare'},
+    {name: 'For You', path: '/you', icon: 'TargetCircles'},
   ],
   locale: {
     default: 'en',
@@ -60,6 +64,7 @@ export default async function Layout({ children }: PropsWithChildren) {
       <Main>
         <Left>
           {settings.leftSidebar && <Sidebar items={settings.leftSidebar} />}
+          {settings.leftSidebar2 && <Sidebar items={settings.leftSidebar2} />}
         </Left>
         <Content>
           <ContentNavigation items={settings.pageNavigation} />

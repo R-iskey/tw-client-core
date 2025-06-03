@@ -1,19 +1,15 @@
 import * as React from 'react';
 import type { SVGProps } from 'react';
 const SvgGamepad = (props: SVGProps<SVGSVGElement>) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    xmlnsXlink="http://www.w3.org/1999/xlink"
-    xmlSpace="preserve"
-    width={24}
-    height={24}
-    {...props}
-  >
-    <image
-      xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFwSURBVHgB7VTtdYJQDA09HYARXieo3eAxQdmgHYFOUDuBbqAjdAPoBNgJoBPoBmki4RDDe+DHX+8596jJzYcJAeCOW4GInrghNjigFpuHa0HBjlhKQp1cF+l9LpbnIZJ8QR81MSE+EX8DsoP4dqyVmLM73xOXxrZV3Ve6a9ZKjDunQCPiNTE1voWduxRfS0w5l9ybOecw31BuYrz22x28m9/eJFsRP43Gzv4NJrqpTTcbsTvja/p5m90cfVMF0CwyFfs3jlGJL8XhcT5irkDBSzP2IlCgMJplr5sq0NpANSILF9BxgVrbHo2mIr4ST/5BkiRc+Iu+OjEd2AZjeOgOb4g1HbCAn2W+0BXxD7qL3dqE2F0u65+JvKsPIi84I20FMcjC9mYcZUSn0eDUE6QCXaAAojogHB8kYuRVMXrZySgyGY1GHvkOos1Cewm+TUnIi3ohtipBK53nYu8b+GGtxFwOScrXulPjaMXm4Y5b8Q8QnkWA00r0iwAAAABJRU5ErkJggg=="
-      width={24}
-      height={24}
-    />
+  <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="currentColor" {...props}>
+    <g clipPath="url(#Gamepad_svg__a)">
+      <path d="M18.098 7.435a7 7 0 0 1-6.79 12.242l-.21-.117-5.192-2.998a7 7 0 0 1 6.79-12.241l.21.117zm-.75 1.3-5.192-2.998a5.5 5.5 0 0 0-5.69 9.411l.19.115 5.192 2.998a5.5 5.5 0 0 0 5.69-9.412zM10.038 7.4a.75.75 0 0 1 .275 1.024l-.75 1.297 1.3.751a.75.75 0 0 1-.75 1.299l-1.3-.751-.75 1.301a.75.75 0 0 1-1.3-.75l.75-1.301-1.298-.749a.75.75 0 1 1 .75-1.299l1.299.749.75-1.297a.75.75 0 0 1 1.024-.274m4.096 6.406a1.25 1.25 0 1 1-1.25 2.165 1.25 1.25 0 0 1 1.25-2.165m3.482-2.032a1.25 1.25 0 1 1-1.25 2.166 1.25 1.25 0 0 1 1.25-2.166" />
+    </g>
+    <defs>
+      <clipPath id="Gamepad_svg__a">
+        <path d="M0 0h24v24H0z" />
+      </clipPath>
+    </defs>
   </svg>
 );
 export default SvgGamepad;

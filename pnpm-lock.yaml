@@ -323,8 +323,8 @@ importers:
         specifier: ^1.1.12
         version: 1.1.12(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@triple-win/icons':
-        specifier: '*'
-        version: 1.0.3-0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: workspace:^
+        version: link:../icons
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -3368,12 +3368,6 @@ packages:
   '@tootallnate/once@2.0.0':
     resolution: {integrity: sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==}
     engines: {node: '>= 10'}
-
-  '@triple-win/icons@1.0.3-0':
-    resolution: {integrity: sha512-tVga5FUiZPv89yB9GW2Dcm+1d2VA+D9Q5ceyecvGzWt9vL/pJhgkRAZQcfr/BjmrxXKIhivuEBJGPcmczxmAew==, tarball: https://npm.pkg.github.com/download/@triple-win/icons/1.0.3-0/864b8c00aba2e278cd96ea5676148ed5983af060}
-    peerDependencies:
-      react: ^19
-      react-dom: ^19
 
   '@trysound/sax@0.2.0':
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
@@ -13109,12 +13103,6 @@ snapshots:
   '@tokenizer/token@0.3.0': {}
 
   '@tootallnate/once@2.0.0': {}
-
-  '@triple-win/icons@1.0.3-0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-      tslib: 2.8.1
 
   '@trysound/sax@0.2.0': {}
 

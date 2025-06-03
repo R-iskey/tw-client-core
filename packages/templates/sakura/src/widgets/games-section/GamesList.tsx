@@ -14,7 +14,7 @@ interface GamesListProps {
 
 const carouselBtnStyles = 'static translate-x-0 translate-y-0 w-10 h-10 dark:bg-white/15';
 
-export const GamesList = ({ title, items, shouldAnimate = true }: GamesListProps) => {
+export const GamesList = ({ title, items  }: GamesListProps) => {
   const carouselRef = useRef<CarouselApi>(null);
 
   return (
@@ -24,7 +24,7 @@ export const GamesList = ({ title, items, shouldAnimate = true }: GamesListProps
         className="w-full grid"
         setApi={(api) => (carouselRef.current = api)}
       >
-        <div className="flex items-start justify-between mb-4">
+        <div className="flex items-start justify-between">
           {title && (
             <SectionTitle>
               {title} ({items?.length})

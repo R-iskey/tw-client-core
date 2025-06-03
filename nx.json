@@ -87,8 +87,10 @@
     }
   },
   "release": {
+    "projects": ["packages/*"],
     "version": {
-      "preVersionCommand": "pnpm dlx nx run-many -t build"
+      "updateInternalDependencies": "auto",
+      "preVersionCommand": "npx nx run-many -t build"
     }
   },
   "targetDefaults": {

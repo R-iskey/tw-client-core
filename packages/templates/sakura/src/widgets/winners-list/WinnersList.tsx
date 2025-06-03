@@ -22,7 +22,7 @@ export function WinnersList({ items }: WinnersListProps) {
           <TabsTrigger
             key={tabLabel}
             value={tabLabel}
-            className={'uppercase font-bold dark:data-[state=active]:bg-white rounded-full'}
+            className={'uppercase font-black dark:data-[state=active]:bg-white rounded-full py-2 tracking-widest'}
           >
             {tabLabel}
           </TabsTrigger>

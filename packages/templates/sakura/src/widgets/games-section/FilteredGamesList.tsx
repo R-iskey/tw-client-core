@@ -12,7 +12,7 @@ interface GamesListProps {
 export const FilteredGamesList = ({ title, items }: GamesListProps) => {
   return (
     <div className={'pt-3 pb-10 border-b-2 mb-3 last:border-b-0'}>
-      <div className="flex items-start justify-between mb-4">
+      <div className="flex items-start justify-between">
         {title && (
           <SectionTitle>
             {title} ({items?.length})

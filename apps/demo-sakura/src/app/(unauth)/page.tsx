@@ -5,7 +5,7 @@ import {
   ProvidersList,
   MainTitle,
   TumblerGridAnimated,
-  WinnersList, SectionTitle,
+  WinnersList, SectionTitle, TumblerGrid,
 } from '@triple-win/template-sakura';
 import { faker } from '@faker-js/faker';
 
@@ -238,6 +238,30 @@ const providerItems = [
     icon: '/images/provider-7.png',
     count: faker.number.int({max: 40}),
   },
+  {
+    id: faker.string.uuid(),
+    name: 'SlotMill',
+    icon: '/images/provider-7.png',
+    count: faker.number.int({max: 40}),
+  },
+  {
+    id: faker.string.uuid(),
+    name: 'SlotMill',
+    icon: '/images/provider-7.png',
+    count: faker.number.int({max: 40}),
+  },
+  {
+    id: faker.string.uuid(),
+    name: 'SlotMill',
+    icon: '/images/provider-7.png',
+    count: faker.number.int({max: 40}),
+  },
+  {
+    id: faker.string.uuid(),
+    name: 'SlotMill',
+    icon: '/images/provider-7.png',
+    count: faker.number.int({max: 40}),
+  },
 ];
 
 const gamesInfo = [
@@ -272,7 +296,7 @@ const gamesInfo = [
 
 export default async function Index() {
   return (
-    <div className="flex flex-col gap-24">
+    <div className="flex flex-col gap-14">
       <BannerCarousel
         frames={slides}
         heights={{ desktop: 320, mobile: 320 }}
@@ -291,8 +315,8 @@ export default async function Index() {
       </section>
       <section>
         <SectionTitle>Trending Now</SectionTitle>
-        {/*<TumblerGrid items={trendingItems} />*/}
-        <TumblerGridAnimated items={trendingItems} />
+        <TumblerGrid items={trendingItems} />
+        {/*<TumblerGridAnimated items={trendingItems} />*/}
       </section>
       <section>
         <SectionTitle>Providers</SectionTitle>
