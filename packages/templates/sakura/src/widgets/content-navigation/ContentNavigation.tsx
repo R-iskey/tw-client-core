@@ -19,7 +19,7 @@ export const ContentNavigation = ({ items }: TopNavigationProps) => {
           <a
             href={item.path}
             key={item.path}
-            className={`px-5 py-2 flex items-center rounded-full cursor-pointer hover:bg-black/10 dark:hover:bg-white/15 transition`}
+            className={`px-5 py-2 flex items-center rounded-full cursor-pointer hover:bg-black/10 dark:hover:bg-white/15 transition justify-center`}
           >
             {item.icon && (
               <span className="mr-2 dark:text-white text-black">

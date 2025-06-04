@@ -39,7 +39,7 @@ export function WinnersList({ items }: WinnersListProps) {
           >
             <CarouselContent>
               {items[tabLabel].map((winner) => (
-                <CarouselItem key={winner.winnerId} className="xs:basis-1/2 sm:basis-1/4 md:basis-1/8 lg:basis-1/9">
+                <CarouselItem key={winner.winnerId} className="basis-1/4 xl:basis-1/6 2xl:basis-1/9">
                   <div className="pt-1">
                     <WinnerItem key={winner.winnerId} {...winner} />
                   </div>

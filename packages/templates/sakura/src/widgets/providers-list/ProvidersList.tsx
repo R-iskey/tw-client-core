@@ -3,8 +3,7 @@
 import type { ProviderItemProps } from './ProviderItem';
 import { ProviderItem } from './ProviderItem';
 import React, { useState } from 'react';
-import { cn } from '@triple-win/ui';
-import { AnimatePresence } from 'framer-motion';
+import { cn, use2xlSize, useLgSize } from '@triple-win/ui';
 
 interface ProvidersListProps {
   items: ProviderItemProps['item'][];
@@ -14,7 +13,12 @@ export const ProvidersList = ({ items }: ProvidersListProps) => {
   const [selectedProviders, setSelectedProviders] = useState<string[]>(['all']);
   const [showAll, setShowAll] = useState(false);
 
-  const visibleProviders = showAll ? items : items.slice(0, 16);
+  const isLgSize = useLgSize();
+  const is2xlSize = use2xlSize();
+
+  const length = isLgSize ? 10 : is2xlSize ? 16 : 6;
+
+  const visibleProviders = showAll ? items : items.slice(0, length);
 
   const handleSelectProvider = (providerId: string) => {
     if (providerId === 'all') {
@@ -36,7 +40,7 @@ export const ProvidersList = ({ items }: ProvidersListProps) => {
 
   return (
     <div>
-      <div className={cn('grid grid-cols-2 lg:grid-cols-9 2xl:grid-cols-9 gap-2.5')}>
+      <div className={cn('grid grid-cols-3 lg:grid-cols-6 2xl:grid-cols-9 gap-2.5')}>
         <ProviderItem
           onProviderSelect={handleSelectProvider}
           item={{
@@ -46,18 +50,16 @@ export const ProvidersList = ({ items }: ProvidersListProps) => {
           }}
           selected={selectedProviders.includes('all')}
         />
-        <AnimatePresence initial={false}>
-          {visibleProviders.map((provider) => {
-            return (
-              <ProviderItem
-                key={provider.id}
-                onProviderSelect={handleSelectProvider}
-                selected={selectedProviders.includes(provider.id)}
-                item={provider}
-              />
-            );
-          })}
-        </AnimatePresence>
+        {visibleProviders.map((provider) => {
+          return (
+            <ProviderItem
+              key={provider.id}
+              onProviderSelect={handleSelectProvider}
+              selected={selectedProviders.includes(provider.id)}
+              item={provider}
+            />
+          );
+        })}
         <ProviderItem
           onProviderSelect={() => setShowAll(!showAll)}
           item={{

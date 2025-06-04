@@ -30,7 +30,7 @@ export const GamesList = ({ title, items  }: GamesListProps) => {
               {title} ({items?.length})
             </SectionTitle>
           )}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 pb-3 2xl:pb-0">
             <CarouselPrevious className={carouselBtnStyles} />
             <CarouselNext className={carouselBtnStyles} />
             <Button className={'uppercase ml-4'} size={'lg'} variant={'secondary'}>

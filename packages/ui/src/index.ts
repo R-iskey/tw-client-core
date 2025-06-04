@@ -19,4 +19,6 @@ export * from './components/collapsible';
 export * from './widgets/InputPassword';
 export * from './widgets/banner-carousel/BannerCarousel';
 
+export * from './hooks/useMediaQuery';
+
 export * from './utils/cn';

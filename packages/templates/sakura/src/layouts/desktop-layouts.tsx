@@ -11,18 +11,18 @@ function Base({ children, className }: LayoutProps) {
 
 function Header({ children, className }: LayoutProps) {
   return (
-    <header className={cn(`bg-background sticky z-[30] h-[100px] px-10 mx-auto`, className)}>
+    <header className={cn(`bg-background sticky z-[30] h-[100px] px-5 2xl:px-10 mx-auto`, className)}>
       <div className="flex justify-between items-center h-full w-full">{children}</div>
     </header>
   );
 }
 
 function Main({ children, className }: LayoutProps) {
-  return <main className={cn('flex w-full h-full space-x-10 px-10', className)}>{children}</main>;
+  return <main className={cn('flex w-full h-full space-x-10 px-5 2xl:px-10', className)}>{children}</main>;
 }
 
 function Left({ children, className }: LayoutProps) {
-  return <aside className={cn('shrink-0 flex-col w-[260px] h-full space-y-6', className)}>{children}</aside>;
+  return <aside className={cn('shrink-0 flex-col 2xl:w-[260px] h-full space-y-6', className)}>{children}</aside>;
 }
 
 function Content({ children, className }: LayoutProps) {
@@ -30,7 +30,7 @@ function Content({ children, className }: LayoutProps) {
 }
 
 function Footer({ children, className }: LayoutProps) {
-  return <footer className={cn('p-10', className)}>{children}</footer>;
+  return <footer className={cn('2xl:p-10 px-5', className)}>{children}</footer>;
 }
 
 export const SakuraLayout = {

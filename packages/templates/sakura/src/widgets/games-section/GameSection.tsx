@@ -5,7 +5,6 @@ import { GamesFilter } from './GamesFilter';
 import type { CasinoGame } from '@triple-win/api';
 import { GamesList } from './GamesList';
 import { FilteredGamesList } from './FilteredGamesList';
-import { AnimatePresence } from 'framer-motion';
 
 interface GameSectionProps {
   filters: {
@@ -63,13 +62,11 @@ export function GameSection(props: GameSectionProps) {
       {data.length === 0 ? (
         <p className={'text-lg text-center'}>No result found.</p>
       ) : (
-        <AnimatePresence mode="popLayout" initial={false}>
-          {data.length === 1 || isFilterApplied ? (
-            <FilteredGamesList title={data[0].title} items={data[0].items} />
-          ) : (
-            data.map((section) => <GamesList key={section.title} title={section.title} items={section.items} />)
-          )}
-        </AnimatePresence>
+        data.length === 1 || isFilterApplied ? (
+          <FilteredGamesList title={data[0].title} items={data[0].items} />
+        ) : (
+          data.map((section) => <GamesList key={section.title} title={section.title} items={section.items} />)
+        )
       )}
     </div>
   );
