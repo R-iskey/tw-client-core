@@ -1,6 +1,6 @@
 'use client';
 
-import { Counter } from '@triple-win/ui';
+import { Counter, useXlSize } from '@triple-win/ui';
 import Image from 'next/image';
 
 export interface JackpotItemProps {
@@ -11,18 +11,20 @@ export interface JackpotItemProps {
 }
 
 export function JackpotItem({ amount, currency, icon }: JackpotItemProps) {
+  const isXl = useXlSize();
+
   return (
-    <div className="grow flex border-r-3 border-white/15 last:border-none 2xl:px-5 px-3 w-full pt-3.5 pb-2">
+    <div className="grow flex lg:px-5 px-3 w-full py-2 border-r-3 border-white/15 even:border-0 even:lg:border-r-3 last:lg:border-0! nth-1:border-b-3 nth-2:border-b-3 nth-1:lg:border-b-0 nth-2:lg:border-b-0">
       <div>
-        <Image src={icon} alt={'jackpot'} width={64} height={64} />
+        <Image src={icon} alt={'jackpot'} width={isXl ? 64 : 40} height={isXl ? 64 : 40} />
       </div>
-      <div className={'2xl:ml-4 ml-2 flex flex-col gap-1 relative'}>
+      <div className={'xl:ml-4 ml-3 flex flex-col xl:gap-1 relative pt-1'}>
         <Counter initial={amount} step={Math.floor(Math.random() * 24) + 1}>
-          <sup className={'text-xs font-normal 2xl:pl-2 pl-1 absolute top-0'}>{currency}</sup>
+          <sup className={'text-xs font-normal xl:pl-2 pl-1 absolute top-0'}>{currency}</sup>
         </Counter>
-        <div>
-          <span className={'text-muted-foreground'}>Some text</span>
-        </div>
+
+          <span className={'text-muted-foreground text-sm xl:text-base'}>Some text</span>
+
       </div>
     </div>
   );

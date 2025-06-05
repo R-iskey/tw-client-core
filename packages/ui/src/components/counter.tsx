@@ -34,7 +34,7 @@ export const Counter = ({
     };
   }, [step, interval]);
 
-  return <span className="font-bold text-2xl tracking-wider drop-shadow">
+  return <span className="font-bold text-sm xl:text-2xl tracking-widest drop-shadow">
     {format(value)}
     {children}
   </span>;

@@ -3,7 +3,7 @@
 import type { ProviderItemProps } from './ProviderItem';
 import { ProviderItem } from './ProviderItem';
 import React, { useState } from 'react';
-import { cn, use2xlSize, useLgSize } from '@triple-win/ui';
+import { cn, Link, useLgSize, useXlSize } from '@triple-win/ui';
 
 interface ProvidersListProps {
   items: ProviderItemProps['item'][];
@@ -13,10 +13,10 @@ export const ProvidersList = ({ items }: ProvidersListProps) => {
   const [selectedProviders, setSelectedProviders] = useState<string[]>(['all']);
   const [showAll, setShowAll] = useState(false);
 
-  const isLgSize = useLgSize();
-  const is2xlSize = use2xlSize();
+  const isTablets = useLgSize();
+  const isDesktops = useXlSize();
 
-  const length = isLgSize ? 10 : is2xlSize ? 16 : 6;
+  const length = isTablets ? 10 : isDesktops ? 16 : 5;
 
   const visibleProviders = showAll ? items : items.slice(0, length);
 
@@ -39,8 +39,18 @@ export const ProvidersList = ({ items }: ProvidersListProps) => {
   };
 
   return (
-    <div>
-      <div className={cn('grid grid-cols-3 lg:grid-cols-6 2xl:grid-cols-9 gap-2.5')}>
+    <div className={'relative'}>
+      {/* for mobile only floating see all */}
+      {!isTablets && (
+        <Link
+          role={'button'}
+          className={'absolute right-0 top-[-40px] tracking-wider text-muted-foreground uppercase font-black'}
+          onClick={() => setShowAll(!showAll)}
+        >
+          {showAll ? 'Show Less' : 'See All'}
+        </Link>
+      )}
+      <div className={cn('grid grid-cols-3 lg:grid-cols-6 xl:grid-cols-9 gap-2.5')}>
         <ProviderItem
           onProviderSelect={handleSelectProvider}
           item={{
@@ -60,14 +70,16 @@ export const ProvidersList = ({ items }: ProvidersListProps) => {
             />
           );
         })}
-        <ProviderItem
-          onProviderSelect={() => setShowAll(!showAll)}
-          item={{
-            id: 'more',
-            name: showAll ? 'Show Less' : 'See All',
-          }}
-          className={'dark:bg-white/25'}
-        />
+        {isTablets && (
+          <ProviderItem
+            onProviderSelect={() => setShowAll(!showAll)}
+            item={{
+              id: 'more',
+              name: showAll ? 'Show Less' : 'See All',
+            }}
+            className={'dark:bg-white/25'}
+          />
+        )}
       </div>
     </div>
   );

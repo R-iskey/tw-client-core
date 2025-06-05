@@ -13,7 +13,7 @@ interface LogoProps {
 
 export const Logo = ({ image, alt }: LogoProps) => {
   return (
-    <Link className="block me-2 md:me-[20px] min-w-14 2xl:min-w-52" href="/">
+    <Link className="block me-2 md:me-[20px] min-w-14 xl:min-w-52" href="/">
       <Image src={typeof image === 'string' ? image : image.dark} width={207} height={50} alt={alt} />
     </Link>
   );

@@ -17,19 +17,19 @@ export function WinnersList({ items }: WinnersListProps) {
 
   return (
     <Tabs defaultValue={defaultTab}>
-      <TabsList className="grid w-full grid-cols-3 rounded-full p-0 max-w-[660px] mx-auto">
+      <TabsList className="grid w-full grid-cols-3 rounded-2xl xl:rounded-full p-0 max-w-[660px] mx-auto">
         {tabs.map((tabLabel) => (
           <TabsTrigger
             key={tabLabel}
             value={tabLabel}
-            className={'uppercase font-black dark:data-[state=active]:bg-white rounded-full py-2 tracking-widest'}
+            className={'whitespace-normal xl:whitespace-nowrap uppercase font-black dark:data-[state=active]:bg-white rounded-2xl xl:rounded-full py-2 tracking-widest'}
           >
             {tabLabel}
           </TabsTrigger>
         ))}
       </TabsList>
       {tabs.map((tabLabel) => (
-        <TabsContent value={tabLabel} key={tabLabel} className={'mt-4 dark:bg-white/15 rounded-2xl pt-3 pb-2'}>
+        <TabsContent value={tabLabel} key={tabLabel} className={'mt-4 dark:bg-white/15 xl:rounded-2xl pt-3 pb-2 xl:static -ml-5 -mr-5 xl:ml-0 xl:mr-0'}>
           <Carousel
             opts={{ align: 'start', loop: true }}
             className="w-full grid"
@@ -39,7 +39,7 @@ export function WinnersList({ items }: WinnersListProps) {
           >
             <CarouselContent>
               {items[tabLabel].map((winner) => (
-                <CarouselItem key={winner.winnerId} className="basis-1/4 xl:basis-1/6 2xl:basis-1/9">
+                <CarouselItem key={winner.winnerId} className="basis-1/3 sm:basis-1/4 xl:basis-1/6 2xl:basis-1/9">
                   <div className="pt-1">
                     <WinnerItem key={winner.winnerId} {...winner} />
                   </div>

@@ -4,6 +4,9 @@ import { Inter } from 'next/font/google';
 import { ThemeProvider as NextTheme } from 'next-themes';
 import React from 'react';
 import { MainApiProvider, ReactQueryProvider } from '@triple-win/query-client';
+import { Header, BaseLayout } from '@triple-win/template-sakura';
+import { FooterSection } from '../components/FooterSection';
+import { APP_SETTINGS } from '../settings';
 
 const interFont = Inter({
   variable: '--font-inter',
@@ -46,7 +49,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             authTokenCookieName: config.authTokenCookieName,
             logoutRedirect: '/',
           }}>
-            <ReactQueryProvider>{children}</ReactQueryProvider>
+            <ReactQueryProvider>
+              <BaseLayout>
+                <Header settings={APP_SETTINGS} />
+                {children}
+                <FooterSection />
+              </BaseLayout>
+            </ReactQueryProvider>
           </MainApiProvider>
         </NextTheme>
       </body>

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Icon } from '@triple-win/ui';
+import { cn, Icon } from '@triple-win/ui';
 
 interface TopNavigationProps {
   items: Array<{
@@ -9,12 +9,16 @@ interface TopNavigationProps {
     icon?: string;
     name: string;
   }>;
+  className?: string;
 }
 
-export const ContentNavigation = ({ items }: TopNavigationProps) => {
+export const ContentNavigation = ({ items, className }: TopNavigationProps) => {
   return (
-    <section role={'navigation'} className={'pb-6'}>
-      <div className="flex bg-white dark:bg-white/15 p-[10px] rounded-full flex w-full h-[64px] shadow-lg overflow-x-auto scrollbar-hide pl-10 gap-4">
+    <div className={cn('bg-white dark:bg-white/15 p-[10px] h-[60px] rounded-full shadow-lg flex justify-center', className)}>
+      <div
+        role={'navigation'}
+        className={cn("overflow-x-auto scrollbar-hide flex w-full lg:pl-10 lg:gap-4")}
+      >
         {items.map((item) => (
           <a
             href={item.path}
@@ -23,13 +27,14 @@ export const ContentNavigation = ({ items }: TopNavigationProps) => {
           >
             {item.icon && (
               <span className="mr-2 dark:text-white text-black">
-                <Icon name={item.icon} />
-              </span>
+              <Icon name={item.icon} />
+            </span>
             )}
             <span className="font-black whitespace-nowrap text-card-foreground dark:text-white">{item.name}</span>
           </a>
         ))}
       </div>
-    </section>
+    </div>
+
   );
 };

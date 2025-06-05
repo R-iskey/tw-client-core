@@ -47,16 +47,20 @@ export const TumblerGrid = ({ items }: TrendingListProps) => {
 
   return (
     <div className="flex items-center">
-      <div className="grid grid-cols-4 grid-rows-2 gap-3 2xl:gap-7 w-full">
+      <div className="grid grid-cols-2 grid-rows-[105px_220px_105px] lg:grid-cols-4 lg:grid-rows-2 gap-3 lg:gap-7 w-full gap-4.5">
         {items.slice(0, 5).map((item, index) => (
           <div
             key={item.id}
-            className={cn(index === 1 ? 'row-span-2 col-span-2' : 'row-span-1 col-span-1')}
+            className={cn(
+              index === 1
+              ? 'col-span-2 row-span-1 row-start-2 lg:row-span-2 lg:col-span-2 lg:row-start-auto'
+              : 'row-span-1 col-span-1'
+            )}
           >
             <img
               src={item.src}
               alt={item.alt}
-              className={cn(imgClasses, activeIndex === index ? 'shadow-lg shadow-primary/30 transform scale-102' : '')}
+              className={cn(imgClasses, 'w-full h-full object-cover', activeIndex === index ? 'shadow-lg shadow-primary/30 transform scale-102' : '')}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
             />

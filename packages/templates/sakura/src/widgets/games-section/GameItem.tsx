@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import type { CasinoGame } from '@triple-win/api';
-import { Button } from '@triple-win/ui';
+import { Button, useLgSize } from '@triple-win/ui';
 
 interface GameItemProps {
   item: CasinoGame;
@@ -12,6 +12,7 @@ interface GameItemProps {
 
 export function GameItem({ item: { imageUrl, name } }: GameItemProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const isLgSize = useLgSize();
 
   // Define animation variants for the overlay
   const overlayVariants = {
@@ -21,31 +22,37 @@ export function GameItem({ item: { imageUrl, name } }: GameItemProps) {
 
   return (
     <motion.div
-      className="relative h-[175px] rounded-xl overflow-hidden shadow-lg cursor-pointer"
+      className="relative lg:h-[175px] rounded-xl overflow-hidden shadow-lg cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       whileHover={{ scale: 1.02 }}
       transition={{ duration: 0.2 }}
     >
-      <Image src={imageUrl} alt={name} width={350} height={175} className="object-cover w-full h-full" />
+      <Image
+        src={imageUrl}
+        alt={name}
+        width={350}
+        height={175}
+        className="object-cover w-full h-full"
+      />
 
       <AnimatePresence>
         {isHovered && (
           <motion.div
-            className="absolute inset-0 dark:bg-black/75 flex flex-col justify-end p-4 rounded-xl"
+            className="absolute inset-0 dark:bg-black/75 flex flex-col lg:justify-end p-4 rounded-xl"
             variants={overlayVariants}
             initial="hidden"
             animate="visible"
             exit="hidden"
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
           >
-            <h3 className="text-white text-lg font-bold text-center mb-3">{name}</h3>
+            <h3 className="text-white text-sm lg:text-lg font-bold text-center mb-3">{name}</h3>
 
-            <div className="flex justify-center space-x-4">
+            <div className="flex justify-center space-x-5 lg:space-x-4">
               <Button
                 variant={'ghost'}
                 className={'dark:bg-white dark:text-black dark:hover:bg-white/85'}
-                size={'lg'}
+                size={isLgSize ? 'lg' : 'sm'}
                 onClick={(e) => {
                   e.stopPropagation();
                   console.log(`Demoing: ${name}`);
@@ -54,7 +61,7 @@ export function GameItem({ item: { imageUrl, name } }: GameItemProps) {
                 Demo
               </Button>
               <Button
-                size={'lg'}
+                size={isLgSize ? 'lg' : 'sm'}
                 onClick={(e) => {
                   e.stopPropagation();
                   console.log(`Playing: ${name}`);

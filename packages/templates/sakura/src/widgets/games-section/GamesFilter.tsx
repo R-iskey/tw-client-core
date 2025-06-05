@@ -32,24 +32,24 @@ export const GamesFilter = (props: GamesFilterProps) => {
   };
 
   return (
-    <div className={'flex justify-between items-center mb-3'}>
-      <div className={'flex gap-2 flex-4'}>
+    <div className={'flex flex-col lg:flex-row justify-between lg:items-center gap-4'}>
+      <div className={'flex order-2 lg:order-1 gap-2 justify-between sm:justify-normal'}>
         {availableCategories.map((category) => (
           <div
             key={category.value}
             className={cn(
-              'min-w-[74px] flex items-center gap-1 px-1 py-3 rounded-xl dark:bg-white/15 transition flex-col cursor-pointer',
+              'w-[80px] lg:w-[74px] text-center lg:px-1 py-3 rounded-xl dark:bg-white/15 transition cursor-pointer',
               selectedCategory === category.value && 'dark:bg-primary'
             )}
             role={'button'}
             onClick={() => onCategoryChange(category.value)}
           >
-            <Icon name={category.icon} className={'w-6 h-6'} />
+            <Icon name={category.icon} className={'w-6 h-6 mx-auto'} />
             <span className={'text-xs'}>{category.name}</span>
           </div>
         ))}
       </div>
-      <div className={'flex-1'}>
+      <div className={'order-1 lg:order-2'}>
         <Input
           placeholder={'Search by game'}
           rightIcon={

@@ -5,7 +5,6 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import type { FocalPoint, NRCFrameComponent, NRCImage } from './types';
 import { cn } from '../../utils/cn';
-import { Button } from '../../components/button';
 
 const DEFAULT_BLUR_WIDTH = 200;
 const DEFAULT_BLUR_QUALITY = 30;
@@ -80,18 +79,7 @@ export const BCFrame = ({
         </>
       )}
 
-      {!!content && (
-        <div
-          className={`z-[11] absolute flex gap-7 flex-col bottom-5 justify-center items-center w-full`}
-        >
-          <h2 className="">{content.description}</h2>
-          {!!content.ctaUrl && (
-            <Button size={'lg'} className={'uppercase w-[320px]'} onClick={() => (window.location.href = content.ctaUrl!)}>
-              {content.ctaText}
-            </Button>
-          )}
-        </div>
-      )}
+      {content}
     </>
   );
 };

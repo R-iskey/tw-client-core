@@ -30,11 +30,7 @@ export type FrameRenderedComponentPropsWithIndex = FrameRenderedComponentProps &
 
 export type NRCFrameComponent = {
   image?: Partial<StaticImageData> & NRCImage;
-  content?: {
-    description: string;
-    ctaText?: string;
-    ctaUrl?: string;
-  }
+  content?: React.ReactNode;
 };
 
 export type Frame = {

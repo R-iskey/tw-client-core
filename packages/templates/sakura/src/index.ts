@@ -11,7 +11,10 @@ export * from './widgets/tumbler-grid/TumblerGridAnimated';
 export * from './widgets/tumbler-grid/TumblerGrid';
 export * from './widgets/providers-list/ProvidersList';
 export * from './widgets/games-section/GameSection';
-export * from './widgets/footer-section/FooterSection';
 export * from './widgets/content-navigation/ContentNavigation';
+export * from './widgets/banner-section/BannerSection';
 
-export * from './layouts/desktop-layouts';
+export * from './layouts/base/Base';
+export * from './layouts/header/Header';
+export * from './layouts/main/Main';
+export * from './layouts/footer/Footer';

@@ -48,8 +48,8 @@ export function GameSection(props: GameSectionProps) {
   const isFilterApplied = searchValue || category !== 'all';
 
   return (
-    <div>
-      <div className={'relative mb-4'}>
+    <div className={'space-y-10'}>
+      <div className={'relative'}>
         {enableFilters && (
           <GamesFilter
             selectedCategory={category}

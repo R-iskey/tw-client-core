@@ -1,11 +1,13 @@
-import { BannerCarousel } from '@triple-win/ui';
 import {
   GameSection,
   JackpotList,
   ProvidersList,
   MainTitle,
   TumblerGridAnimated,
-  WinnersList, SectionTitle, TumblerGrid,
+  WinnersList,
+  SectionTitle,
+  TumblerGrid,
+  BannerSection,
 } from '@triple-win/template-sakura';
 import { faker } from '@faker-js/faker';
 
@@ -146,121 +148,121 @@ const providerItems = [
     id: faker.string.uuid(),
     name: 'NetEnt',
     icon: '/images/provider-1.png',
-    count: faker.number.int({max: 40}),
+    count: faker.number.int({ max: 40 }),
   },
   {
     id: faker.string.uuid(),
     name: 'Habanero',
     icon: '/images/provider-2.png',
-    count: faker.number.int({max: 40}),
+    count: faker.number.int({ max: 40 }),
   },
   {
     id: faker.string.uuid(),
     name: 'Relax',
     icon: '/images/provider-3.png',
-    count: faker.number.int({max: 40}),
+    count: faker.number.int({ max: 40 }),
   },
   {
     id: faker.string.uuid(),
     name: 'Booming Games',
     icon: '/images/provider-4.png',
-    count: faker.number.int({max: 40}),
+    count: faker.number.int({ max: 40 }),
   },
   {
     id: faker.string.uuid(),
     name: 'EvoPlay',
     icon: '/images/provider-5.png',
-    count: faker.number.int({max: 40}),
+    count: faker.number.int({ max: 40 }),
   },
   {
     id: faker.string.uuid(),
     name: 'RubyPlay',
     icon: '/images/provider-6.png',
-    count: faker.number.int({max: 40}),
+    count: faker.number.int({ max: 40 }),
   },
   {
     id: faker.string.uuid(),
     name: 'SlotMill',
     icon: '/images/provider-7.png',
-    count: faker.number.int({max: 40}),
+    count: faker.number.int({ max: 40 }),
   },
   {
     id: faker.string.uuid(),
     name: 'Playson',
     icon: '/images/provider-8.png',
-    count: faker.number.int({max: 40}),
+    count: faker.number.int({ max: 40 }),
   },
   {
     id: faker.string.uuid(),
     name: 'Playson',
     icon: '/images/provider-8.png',
-    count: faker.number.int({max: 40}),
+    count: faker.number.int({ max: 40 }),
   },
   {
     id: faker.string.uuid(),
     name: 'Relax',
     icon: '/images/provider-3.png',
-    count: faker.number.int({max: 40}),
+    count: faker.number.int({ max: 40 }),
   },
   {
     id: faker.string.uuid(),
     name: 'NetEnt',
     icon: '/images/provider-1.png',
-    count: faker.number.int({max: 40}),
+    count: faker.number.int({ max: 40 }),
   },
   {
     id: faker.string.uuid(),
     name: 'Habanero',
     icon: '/images/provider-2.png',
-    count: faker.number.int({max: 40}),
+    count: faker.number.int({ max: 40 }),
   },
   {
     id: faker.string.uuid(),
     name: 'Booming Games',
     icon: '/images/provider-4.png',
-    count: faker.number.int({max: 40}),
+    count: faker.number.int({ max: 40 }),
   },
   {
     id: faker.string.uuid(),
     name: 'EvoPlay',
     icon: '/images/provider-5.png',
-    count: faker.number.int({max: 40}),
+    count: faker.number.int({ max: 40 }),
   },
   {
     id: faker.string.uuid(),
     name: 'RubyPlay',
     icon: '/images/provider-6.png',
-    count: faker.number.int({max: 40}),
+    count: faker.number.int({ max: 40 }),
   },
   {
     id: faker.string.uuid(),
     name: 'SlotMill',
     icon: '/images/provider-7.png',
-    count: faker.number.int({max: 40}),
+    count: faker.number.int({ max: 40 }),
   },
   {
     id: faker.string.uuid(),
     name: 'SlotMill',
     icon: '/images/provider-7.png',
-    count: faker.number.int({max: 40}),
+    count: faker.number.int({ max: 40 }),
   },
   {
     id: faker.string.uuid(),
     name: 'SlotMill',
     icon: '/images/provider-7.png',
-    count: faker.number.int({max: 40}),
+    count: faker.number.int({ max: 40 }),
   },
   {
     id: faker.string.uuid(),
     name: 'SlotMill',
     icon: '/images/provider-7.png',
-    count: faker.number.int({max: 40}),
+    count: faker.number.int({ max: 40 }),
   },
   {
     id: faker.string.uuid(),
     name: 'SlotMill',
     icon: '/images/provider-7.png',
-    count: faker.number.int({max: 40}),
+    count: faker.number.int({ max: 40 }),
   },
 ];
 
@@ -296,16 +298,8 @@ const gamesInfo = [
 
 export default async function Index() {
   return (
-    <div className="flex flex-col gap-14">
-      <BannerCarousel
-        frames={slides}
-        heights={{ desktop: 320, mobile: 320 }}
-        noBlur={true}
-        classNames={{
-          imageClassnames: 'rounded-3xl',
-          containerClassnames: 'rounded-3xl',
-        }}
-      />
+    <div className="flex flex-col gap-13">
+      <BannerSection slides={slides} />
       <section>
         <MainTitle>Jackpot</MainTitle>
         <JackpotList items={jackpotList} />
@@ -316,7 +310,6 @@ export default async function Index() {
       <section>
         <SectionTitle>Trending Now</SectionTitle>
         <TumblerGrid items={trendingItems} />
-        {/*<TumblerGridAnimated items={trendingItems} />*/}
       </section>
       <section>
         <SectionTitle>Providers</SectionTitle>
