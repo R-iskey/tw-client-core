@@ -16,16 +16,16 @@ const FGridLast = ({ children, className }: PropsWithChildren & { className?: st
   return <div className={cn("lg:col-span-2 lg:row-start-2 xl:col-span-1 xl:row-start-auto mt-10 xl:mt-[-30px] xl:text-right", className)}>{children}</div>
 }
 
-const FLinksSection = ({ title, linksGroup }) => {
+const FLinksSection = ({ title, linksGroup }: {title: string; linksGroup: any[]}) => {
   return (
     <div>
       <h3 className="font-semibold text-xl">{title}</h3>
       <hr className={'mb-3 mt-1 bg-muted-foreground'} />
       <div className={'flex gap-12'}>
-        {linksGroup.map((linkGroup, idx) => (
+        {linksGroup.map((linkGroup: any, idx: number) => (
           <div key={idx}>
             <ul className="space-y-2">
-              {linkGroup.map((link, idx2) => (
+              {linkGroup.map((link: any, idx2: number) => (
                 <li key={idx2}>
                   <a href={link.href} className="hover:underline text-muted-foreground">
                     {link.label}

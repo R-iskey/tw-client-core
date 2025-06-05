@@ -8,7 +8,7 @@ interface BannerSectionProps {
   slides: any;
 }
 
-const DesktopBannerContent = ({ content }) => (
+const DesktopBannerContent = ({ content }: any) => (
   <div className={`z-[11] absolute flex gap-7 flex-col bottom-5 justify-center items-center w-full`}>
     <h2>{content.description}</h2>
     {!!content.ctaUrl && (
@@ -19,7 +19,7 @@ const DesktopBannerContent = ({ content }) => (
   </div>
 );
 
-const MobileBannerContent = ({ content }) => (
+const MobileBannerContent = ({ content }: any) => (
   <div className={`z-[11] absolute flex gap-4 flex-col bottom-5 w-full left-6 max-w-[75%]`}>
     <h2>{content.description}</h2>
     {!!content.ctaUrl && (
@@ -32,7 +32,7 @@ const MobileBannerContent = ({ content }) => (
 
 export const BannerSection = ({ slides }: BannerSectionProps) => {
   const frames = useMemo(() => {
-    return slides.map((slide) => ({
+    return slides.map((slide: any) => ({
       ...slide,
       desktop: {
         ...slide.desktop,

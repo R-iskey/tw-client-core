@@ -1,10 +1,11 @@
 'use client';
 import { SectionTitle } from '../typography/Typography';
 import type { CasinoGame } from '@triple-win/api';
+import type {
+  CarouselApi} from '@triple-win/ui';
 import {
   Button,
   Carousel,
-  CarouselApi,
   CarouselContent,
   CarouselItem,
   CarouselNext,
@@ -19,7 +20,7 @@ interface GamesListProps {
   shouldAnimate?: boolean;
 }
 
-function chunkArray(array: CasinoGame[], chunkSize: number) {
+function chunkArray(array: any[], chunkSize: number) {
   const res = [];
   for (let i = 0; i < array.length; i += chunkSize) {
     res.push(array.slice(i, i + chunkSize));
@@ -29,7 +30,7 @@ function chunkArray(array: CasinoGame[], chunkSize: number) {
 
 const carouselBtnStyles = 'static translate-x-0 translate-y-0 w-10 h-10 dark:bg-white/15';
 
-export const GamesList = ({ title, items }: GamesListProps) => {
+export const GamesList = ({ title, items = [] }: GamesListProps) => {
   const carouselRef = useRef<CarouselApi>(null);
   const isLgSize = useLgSize();
   const [showAll, setShowAll] = useState(false);
