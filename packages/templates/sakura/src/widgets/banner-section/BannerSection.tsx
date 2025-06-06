@@ -15,11 +15,11 @@ export const BannerSection = ({ slides }: BannerSectionProps) => {
       ...slide,
       desktop: {
         ...slide.desktop,
-        content: <BannerContent content={slide.desktop.content} />,
+        content: slide.desktop.content && <BannerContent content={slide.desktop.content} />,
       },
       mobile: {
         ...slide.mobile,
-        content: <BannerContent content={slide.mobile.content} isMobile />,
+        content: slide.mobile.content && <BannerContent content={slide.mobile.content} isMobile />,
       },
     }));
   }, [slides]);

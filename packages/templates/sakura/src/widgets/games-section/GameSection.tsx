@@ -14,7 +14,7 @@ interface GameSectionProps {
   };
   data: Array<{
     title?: string;
-    items?: CasinoGame[];
+    items: CasinoGame[];
   }>;
 }
 
