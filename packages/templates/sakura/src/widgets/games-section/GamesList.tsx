@@ -1,41 +1,33 @@
 'use client';
 import { SectionTitle } from '../typography/Typography';
 import type { CasinoGame } from '@triple-win/api';
-import type {
-  CarouselApi} from '@triple-win/ui';
 import {
   Button,
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious, Link, useLgSize,
+  CarouselPrevious,
+  Link,
+  useLgSize,
 } from '@triple-win/ui';
-import React, { useRef, useState } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
 import { GameItem } from './GameItem';
+import chunkArray from '../../utils/chunkArray';
 
 interface GamesListProps {
   title?: string;
-  items?: CasinoGame[];
-  shouldAnimate?: boolean;
-}
-
-function chunkArray(array: any[], chunkSize: number) {
-  const res = [];
-  for (let i = 0; i < array.length; i += chunkSize) {
-    res.push(array.slice(i, i + chunkSize));
-  }
-  return res;
+  items: CasinoGame[];
 }
 
 const carouselBtnStyles = 'static translate-x-0 translate-y-0 w-10 h-10 dark:bg-white/15';
 
 export const GamesList = ({ title, items = [] }: GamesListProps) => {
-  const carouselRef = useRef<CarouselApi>(null);
   const isLgSize = useLgSize();
+
   const [showAll, setShowAll] = useState(false);
 
-  const groupedItems = chunkArray(items, 4);
+  const groupedItems = useMemo(() => chunkArray(items, 4), [items]);
 
   return (
     <div className={'pt-3 pb-10 lg:border-b-2 mb-3 last:border-b-0 relative'}>
@@ -48,11 +40,11 @@ export const GamesList = ({ title, items = [] }: GamesListProps) => {
           {showAll ? 'Show Less' : 'See All'}
         </Link>
       )}
-      <Carousel opts={{ align: 'start', loop: true }} className="w-full" setApi={(api) => (carouselRef.current = api)}>
+      <Carousel opts={{ align: 'start', loop: true }} className="w-full">
         <div className="flex items-start justify-between">
           {title && (
             <SectionTitle>
-              {title} ({items?.length})
+              {title} ({items.length})
             </SectionTitle>
           )}
           <div className="hidden lg:visisble flex items-center gap-3 pb-3 xl:pb-0">

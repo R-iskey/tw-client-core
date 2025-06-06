@@ -1,15 +1,15 @@
 'use client';
 
-import type { ProviderItemProps } from './ProviderItem';
+import type { ProviderItemData } from './types';
 import { ProviderItem } from './ProviderItem';
 import React, { useState } from 'react';
 import { cn, Link, useLgSize, useXlSize } from '@triple-win/ui';
 
-interface ProvidersListProps {
-  items: ProviderItemProps['item'][];
+interface ProvidersSectionProps {
+  items: ProviderItemData[];
 }
 
-export const ProvidersList = ({ items }: ProvidersListProps) => {
+export const ProvidersSection = ({ items }: ProvidersSectionProps) => {
   const [selectedProviders, setSelectedProviders] = useState<string[]>(['all']);
   const [showAll, setShowAll] = useState(false);
 
@@ -60,6 +60,7 @@ export const ProvidersList = ({ items }: ProvidersListProps) => {
           }}
           selected={selectedProviders.includes('all')}
         />
+
         {visibleProviders.map((provider) => {
           return (
             <ProviderItem
@@ -70,6 +71,7 @@ export const ProvidersList = ({ items }: ProvidersListProps) => {
             />
           );
         })}
+
         {isTablets && (
           <ProviderItem
             onProviderSelect={() => setShowAll(!showAll)}
@@ -83,4 +85,4 @@ export const ProvidersList = ({ items }: ProvidersListProps) => {
       </div>
     </div>
   );
-};
+}

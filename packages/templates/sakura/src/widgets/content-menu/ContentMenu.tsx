@@ -12,7 +12,7 @@ interface TopNavigationProps {
   className?: string;
 }
 
-export const ContentNavigation = ({ items, className }: TopNavigationProps) => {
+export const ContentMenu = ({ items, className }: TopNavigationProps) => {
   return (
     <div className={cn('bg-white dark:bg-white/15 p-[10px] h-[60px] rounded-full shadow-lg flex justify-center', className)}>
       <div

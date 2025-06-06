@@ -2,15 +2,9 @@
 
 import { Counter, useXlSize } from '@triple-win/ui';
 import Image from 'next/image';
+import type { JackpotItemData } from './types';
 
-export interface JackpotItemProps {
-  id: string;
-  amount: number;
-  currency: string;
-  icon: string;
-}
-
-export function JackpotItem({ amount, currency, icon }: JackpotItemProps) {
+export function JackpotItem({ amount, currency, icon }: JackpotItemData) {
   const isXl = useXlSize();
 
   return (
@@ -23,8 +17,7 @@ export function JackpotItem({ amount, currency, icon }: JackpotItemProps) {
           <sup className={'text-xs font-normal xl:pl-2 pl-1 absolute top-0'}>{currency}</sup>
         </Counter>
 
-          <span className={'text-muted-foreground text-sm xl:text-base'}>Some text</span>
-
+        <span className={'text-muted-foreground text-sm xl:text-base'}>Some text</span>
       </div>
     </div>
   );

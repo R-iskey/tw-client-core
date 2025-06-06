@@ -15,7 +15,7 @@ interface HeaderMenuProps {
 export function HeaderMenu({ navigations }: HeaderMenuProps) {
   const pathname = usePathname();
 
-  const isActive = (path: string) => pathname === path; // Compare the current path to the link's path
+  const isActive = (path: string) => pathname === path;
 
   return (
     <nav>

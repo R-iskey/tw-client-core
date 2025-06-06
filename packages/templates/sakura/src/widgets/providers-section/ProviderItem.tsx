@@ -1,14 +1,10 @@
 'use client';
 
 import { cn } from '@triple-win/ui';
+import type { ProviderItemData } from './types';
 
-export interface ProviderItemProps {
-  item: {
-    id: string;
-    name: string;
-    icon?: string;
-    count?: number;
-  };
+interface ProviderItemProps {
+  item: ProviderItemData;
   className?: string;
   onProviderSelect: (providerId: string) => void;
   selected?: boolean;

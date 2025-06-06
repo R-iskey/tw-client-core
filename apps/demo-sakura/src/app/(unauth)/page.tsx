@@ -1,14 +1,14 @@
 import {
   GameSection,
-  JackpotList,
-  ProvidersList,
+  JackpotSection,
+  ProvidersSection,
   MainTitle,
-  WinnersList,
+  WinnersSection,
   SectionTitle,
-  TumblerGrid,
   BannerSection,
 } from '@triple-win/template-sakura';
 import { faker } from '@faker-js/faker';
+import { TumblerGrid } from '@triple-win/ui';
 
 const random6Digits = () => Math.floor(100000 + Math.random() * 900000);
 const currency = 'USD';
@@ -113,31 +113,31 @@ const trendingItems = [
   {
     id: '1',
     src: '/images/Banner-1.png',
-    gameUrl: 'https://triplewin.com',
+    url: 'https://triplewin.com',
     alt: faker.string.alpha({ length: 5 }),
   },
   {
     id: '5',
     src: '/images/Banner-4.png',
-    gameUrl: 'https://triplewin.com',
+    url: 'https://triplewin.com',
     alt: faker.string.alpha({ length: 5 }),
   },
   {
     id: '2',
     src: '/images/Banner-2.png',
-    gameUrl: 'https://triplewin.com',
+    url: 'https://triplewin.com',
     alt: faker.string.alpha({ length: 5 }),
   },
   {
     id: '3',
     src: '/images/Banner-5.png',
-    gameUrl: 'https://triplewin.com',
+    url: 'https://triplewin.com',
     alt: faker.string.alpha({ length: 5 }),
   },
   {
     id: '4',
     src: '/images/Banner-3.png',
-    gameUrl: 'https://triplewin.com',
+    url: 'https://triplewin.com',
     alt: faker.string.alpha({ length: 5 }),
   },
 ];
@@ -301,18 +301,18 @@ export default async function Index() {
       <BannerSection slides={slides} />
       <section>
         <MainTitle>Jackpot</MainTitle>
-        <JackpotList items={jackpotList} />
+        <JackpotSection items={jackpotList} />
         <div className={'mt-6'}>
-          <WinnersList items={winners} />
+          <WinnersSection items={winners} />
         </div>
       </section>
       <section>
         <SectionTitle>Trending Now</SectionTitle>
-        <TumblerGrid items={trendingItems} />
+        <TumblerGrid items={trendingItems} animated={false} />
       </section>
       <section>
         <SectionTitle>Providers</SectionTitle>
-        <ProvidersList items={providerItems} />
+        <ProvidersSection items={providerItems} />
       </section>
       <section>
         <SectionTitle>Categories</SectionTitle>

@@ -1,7 +1,7 @@
 'use client';
 
-import React, { type KeyboardEvent, useState } from 'react';
-import { Button, cn, Icon, Input } from '@triple-win/ui';
+import React, { type KeyboardEvent } from 'react';
+import { cn, Icon, Input } from '@triple-win/ui';
 
 const gameCategories = [
   { name: 'All', value: 'all', icon: 'Menu' },

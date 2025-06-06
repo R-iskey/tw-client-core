@@ -15,6 +15,7 @@ export { default as RingBell } from './RingBell';
 export { default as Rocket } from './Rocket';
 export { default as Search } from './Search';
 export { default as Signal } from './Signal';
+export { default as Star } from './Star';
 export { default as TargetCircles } from './TargetCircles';
 export { default as Trophy } from './Trophy';
 export { default as Twitter } from './Twitter';

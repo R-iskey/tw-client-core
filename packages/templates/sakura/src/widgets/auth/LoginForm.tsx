@@ -21,7 +21,7 @@ import type { ZodType } from 'zod';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-const loginSchema: ZodType<LoginRequest> = z.object({
+const loginSchema = z.object({
   userName: z.string().min(6, {
     message: 'Username must be at least 6 characters.',
   }),
@@ -29,7 +29,7 @@ const loginSchema: ZodType<LoginRequest> = z.object({
     message: 'Password must be at least 6 characters.',
   }),
   rememberMe: z.boolean(),
-});
+}) as ZodType<LoginRequest>;
 
 export const LoginForm = () => {
   const form = useForm<LoginRequest>({

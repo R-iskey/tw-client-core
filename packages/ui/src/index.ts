@@ -17,8 +17,9 @@ export * from './components/carousel';
 export * from './components/drawer';
 export * from './components/collapsible';
 
-export * from './widgets/InputPassword';
+export * from './widgets/form/InputPassword';
 export * from './widgets/banner-carousel/BannerCarousel';
+export * from './widgets/tumbler-grid/TumblerGrid';
 
 export * from './hooks/useMediaQuery';
 

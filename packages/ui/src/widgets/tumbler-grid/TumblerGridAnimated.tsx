@@ -2,17 +2,18 @@
 
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import type { TrendingItemProps } from './TumblerGrid';
-import { cn } from '@triple-win/ui';
+import { cn } from '../../utils/cn';
+import type { TumblerGridItemData } from './types';
+import { getRandomNextIdx, getRandomSubset } from './utils';
 
 type TumblerGridProps = {
-  items: TrendingItemProps[];
+  items: TumblerGridItemData[];
   cellClassNames?: string[]; // For custom per-cell style
   bigCellIdx?: number; // index of the big cell
 };
 
 type TumblerCellProps = {
-  images: TrendingItemProps[];
+  images: TumblerGridItemData[];
   initialIdx: number;
   isAnimating: boolean;
   onAnimationEnd: () => void;
@@ -24,24 +25,7 @@ const ANIMATION_DURATION = 0.6; // seconds
 const INTERVAL = 2500; // ms between waves
 const CELLS_COUNT = 5; // visible cells
 
-function getRandomSubset(arr: number[], n: number) {
-  // Randomly pick n unique items from arr
-  const copy = [...arr];
-  for (let i = copy.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [copy[i], copy[j]] = [copy[j], copy[i]];
-  }
-  return copy.slice(0, n);
-}
 
-// Helper for a new random image index
-function getRandomNextIdx(curr: number, total: number) {
-  let next = curr;
-  while (next === curr) {
-    next = Math.floor(Math.random() * total);
-  }
-  return next;
-}
 
 export const TumblerCell: React.FC<TumblerCellProps> = ({
   images,

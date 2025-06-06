@@ -3,7 +3,12 @@
 import HeaderDesktop from './HeaderDesktop';
 import HeaderMobile from './HeaderMobile';
 import { cn, useXlSize } from '@triple-win/ui';
-import type { HeaderProps } from './header.types';
+import type { HeaderSettings } from './types';
+
+interface HeaderProps {
+  settings: HeaderSettings;
+  className?: string;
+}
 
 export function Header({ settings, className }: HeaderProps) {
   const isDesktop = useXlSize(); // xl: 1280px+
@@ -12,7 +17,7 @@ export function Header({ settings, className }: HeaderProps) {
 
   return (
     <header className={cn(`bg-background sticky z-[30] h-[100px] mx-auto`, className)}>
-      <HeaderComponent settings={settings} />
+      <HeaderComponent {...settings} />
     </header>
   );
 }

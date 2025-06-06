@@ -11,7 +11,7 @@ interface WinnersListProps {
   };
 }
 
-export function WinnersList({ items }: WinnersListProps) {
+export function WinnersSection({ items }: WinnersListProps) {
   const tabs = useMemo(() => Object.keys(items), [items]);
   const defaultTab = useMemo(() => tabs[0], [items]);
 

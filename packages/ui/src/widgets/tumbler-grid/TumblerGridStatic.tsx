@@ -1,22 +1,17 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { cn } from '@triple-win/ui';
+import { cn } from '../../utils/cn';
+import type { TumblerGridItemData } from './types';
 
-export interface TrendingItemProps {
-  id: string;
-  src: string;
-  gameUrl: string;
-  alt: string;
-}
-interface TrendingListProps {
-  items: TrendingItemProps[];
+interface TumblerGridProps {
+  items: TumblerGridItemData[];
 }
 
 const imgClasses =
   'w-full h-full object-cover rounded-xl cursor-pointer hover:shadow-lg hover:shadow-primary/30 hover:transform hover:scale-102 border-2 border-transparent transition-all duration-300 ease-in-out';
 
-export const TumblerGrid = ({ items }: TrendingListProps) => {
+export const TumblerGridStatic = ({ items }: TumblerGridProps) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 

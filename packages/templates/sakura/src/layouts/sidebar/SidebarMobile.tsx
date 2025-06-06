@@ -10,8 +10,13 @@ import {
   DrawerTrigger,
   Icon,
 } from '@triple-win/ui';
+import type { SidebarItemData } from './types';
 
-export const SidebarMobile = () => {
+interface SidebarMobileProps {
+  items: SidebarItemData[]
+}
+
+export const SidebarMobile = ({ items }: SidebarMobileProps) => {
   return (
     <Drawer direction={'left'}>
       <DrawerTrigger asChild>

@@ -1,28 +1,16 @@
 'use client';
 
-import { Button } from '@triple-win/ui';
-import Link from 'next/link';
+import type { AuthActions } from './types';
+import { AuthLinks } from './AuthLinks';
 
 interface HeaderProfileProps {
-  loginHref: string;
-  signUpHref: string;
+  authActions: AuthActions;
 }
 
-export function HeaderProfile({ loginHref, signUpHref }: HeaderProfileProps) {
+export function HeaderProfile({ authActions }: HeaderProfileProps) {
   const isAuth = false;
 
   return (
-    <div>
-      {isAuth ? null : (
-        <div className={'flex space-x-4 rounded-full p-2 dark:bg-white/15 bg-white/75 w-80 justify-around'}>
-          <Button className={'uppercase'} variant={'ghost'} size={'lg'} asChild>
-            <Link href={loginHref}>Log In</Link>
-          </Button>
-          <Button className={'uppercase'} size={'lg'} asChild>
-            <Link href={signUpHref}>Join now</Link>
-          </Button>
-        </div>
-      )}
-    </div>
-  );
+    isAuth ? null : <AuthLinks loginHref={authActions.loginHref} signUpHref={authActions.signUpHref} />
+  )
 }
