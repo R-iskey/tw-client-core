@@ -11,9 +11,10 @@ export interface IconProps extends SVGProps<SVGSVGElement>, VariantProps<typeof 
 const iconVariants = cva('text-inherit dark:text-white', {
   variants: {
     size: {
+      lg: `w-9 h-9`,
       default: `w-6 h-6`,
       md: 'w-[22px] h-[22px]',
-      sm: `w-3.5 h-3.5`,
+      sm: `w-3.5 h-3.5`
     },
   },
   defaultVariants: {

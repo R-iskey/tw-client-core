@@ -14,6 +14,7 @@ export * from './components/tabs';
 export * from './components/link';
 export * from './components/counter';
 export * from './components/carousel';
+export * from './components/drawer';
 export * from './components/collapsible';
 
 export * from './widgets/InputPassword';

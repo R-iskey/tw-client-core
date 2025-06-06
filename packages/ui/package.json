@@ -5,7 +5,6 @@
     "**/*"
   ],
   "dependencies": {
-    "@triple-win/icons": "workspace:^",
     "@radix-ui/react-accordion": "^1.2.2",
     "@radix-ui/react-checkbox": "^1.1.3",
     "@radix-ui/react-collapsible": "^1.1.11",
@@ -15,6 +14,7 @@
     "@radix-ui/react-slot": "^1.1.1",
     "@radix-ui/react-switch": "^1.1.2",
     "@radix-ui/react-tabs": "^1.1.12",
+    "@triple-win/icons": "workspace:^",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "embla-carousel-autoplay": "^8.6.0",
@@ -22,15 +22,16 @@
     "lucide-react": "^0.474.0",
     "react-hook-form": "^7.56.4",
     "react-swipeable": "^7.0.2",
+    "sonner": "^1.7.4",
     "tailwind-merge": "^3.0.1",
-    "sonner": "^1.7.4"
+    "vaul": "^1.1.2"
   },
   "devDependencies": {
     "tw-animate-css": "^1.3.0"
   },
   "peerDependencies": {
+    "next": "^15",
     "react": "^19",
-    "react-dom": "^19",
-    "next": "^15"
+    "react-dom": "^19"
   }
 }

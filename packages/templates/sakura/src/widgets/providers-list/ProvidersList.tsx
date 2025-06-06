@@ -16,7 +16,7 @@ export const ProvidersList = ({ items }: ProvidersListProps) => {
   const isTablets = useLgSize();
   const isDesktops = useXlSize();
 
-  const length = isTablets ? 10 : isDesktops ? 16 : 5;
+  const length = isDesktops ? 16 : isTablets ? 10 : 5;
 
   const visibleProviders = showAll ? items : items.slice(0, length);
 

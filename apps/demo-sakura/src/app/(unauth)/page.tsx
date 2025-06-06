@@ -3,7 +3,6 @@ import {
   JackpotList,
   ProvidersList,
   MainTitle,
-  TumblerGridAnimated,
   WinnersList,
   SectionTitle,
   TumblerGrid,
