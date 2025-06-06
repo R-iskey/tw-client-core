@@ -28,8 +28,8 @@ export async function GET(request: Request) {
       {name: 'For You', path: '/you', icon: 'Star'},
       {name: 'Popular', path: '/popular', icon: 'Flame'},
       {name: 'Classic', path: '/classic', icon: 'Rocket'},
-      {name: 'Slots', path: '/slots', icon: 'SlotMachine'},
-      {name: 'Unlimited Play', path: '/unlimited', icon: 'PlaystationSymbols'},
+      {name: 'Slots', path: '/slots', icon: 'RingBell'},
+      {name: 'Unlimited Play', path: '/unlimited', icon: 'PsSymbols'},
     ],
     locale: {
       default: 'en',

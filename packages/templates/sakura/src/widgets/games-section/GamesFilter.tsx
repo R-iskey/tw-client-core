@@ -5,7 +5,7 @@ import { Button, cn, Icon, Input } from '@triple-win/ui';
 
 const gameCategories = [
   { name: 'All', value: 'all', icon: 'Menu' },
-  { name: 'Last Played', value: 'recent', icon: 'Recent' },
+  { name: 'Last Played', value: 'recent', icon: 'Clock' },
   { name: 'Top Games', value: 'top', icon: 'Trophy' },
   { name: 'Favorites', value: 'favorites', icon: 'Star' },
   { name: 'Hot now', value: 'hot', icon: 'Flame' },

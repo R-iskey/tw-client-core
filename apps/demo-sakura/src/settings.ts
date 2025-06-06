@@ -15,8 +15,8 @@ export const APP_SETTINGS = {
   pageNavigation: [
     { name: 'Home', icon: 'Home', path: '/' },
     { name: 'Games', icon: 'Gamepad', path: '/games' },
-    { name: 'Casino', icon: 'SlotMachine', path: '/casino' },
-    { name: 'Live Casino', icon: 'ConnectionSignal', path: '/live' },
+    { name: 'Casino', icon: 'RingBell', path: '/casino' },
+    { name: 'Live Casino', icon: 'Signal', path: '/live' },
     { name: 'Blog', icon: 'Layout', path: '/blog' },
     { name: 'Promotions', icon: 'Rocket', path: '/promotions' },
   ],
@@ -25,8 +25,8 @@ export const APP_SETTINGS = {
     { name: 'For You', path: '/you', icon: 'Star' },
     { name: 'Popular', path: '/popular', icon: 'Flame' },
     { name: 'Classic', path: '/classic', icon: 'Rocket' },
-    { name: 'Slots', path: '/slots', icon: 'SlotMachine' },
-    { name: 'Unlimited Play', path: '/unlimited', icon: 'PlaystationSymbols' },
+    { name: 'Slots', path: '/slots', icon: 'RingBell' },
+    { name: 'Unlimited Play', path: '/unlimited', icon: 'PsSymbols' },
   ],
   leftSidebar2: [
     { name: 'Install App', path: '/install-app', icon: 'PlusSquare' },

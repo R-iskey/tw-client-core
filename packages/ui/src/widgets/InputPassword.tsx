@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { cn } from '../utils/cn';
 import { EyeIcon, EyeIconNotAllowed } from '@triple-win/icons';
 import { Input } from '../components/input';
+import { Icon } from '../components/icon';
 
 export interface PasswordInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   containerClass?: string;
@@ -30,7 +31,7 @@ const InputPassword = React.forwardRef<HTMLInputElement, PasswordInputProps>(
 
           <div className="absolute right-1 top-1 flex items-center justify-end p-2 cursor-pointer">
             <button type={'button'} onClick={() => setShow(!show)} className="text-muted-foreground">
-              {show ? <EyeIcon /> : <EyeIconNotAllowed />}
+              {show ? <Icon name={'EyeOpen'} /> :<Icon name={'EyeClosed'} />}
             </button>
           </div>
         </div>
